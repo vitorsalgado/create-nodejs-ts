@@ -38,9 +38,6 @@ after_script:
         exit 0;
     fi
 
-  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-  - heroku plugins:install heroku-docker
-
   - docker login --email=_ --username=_ --password=$HEROKU_API_TOKEN registry.heroku.com
   - docker tag $DOCKER_IMAGE registry.heroku.com/$HEROKU_APPLICATION/app
   - docker push registry.heroku.com/$HEROKU_APPLICATION/app
