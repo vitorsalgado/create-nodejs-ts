@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
+docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
 export APPLICATION_VERSION=$(cat package.json \
   | grep version \
