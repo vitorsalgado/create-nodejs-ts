@@ -17,4 +17,4 @@ docker build -f Dockerfile -t $DOCKER_REPO:$COMMIT .
 docker tag $DOCKER_REPO:$COMMIT $DOCKER_REPO:$TAG
 docker tag $DOCKER_REPO:$COMMIT $DOCKER_REPO:$APPLICATION_VERSION
 
-docker push $DOCKER_REPO
+docker push
