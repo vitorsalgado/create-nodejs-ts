@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 [node-image]: https://img.shields.io/badge/node.js-%3E=_7.7.3-green.svg?style=flat-square
-[node-url]: http://nodejs.org/download/
+[node-url]: https://nodejs.org/download/release/v7.7.3/
 
 Node.js boilerplate application based on Koa framework. Useful to start a new project with a complete infrastructure set.  
 It comes with pre-defined architecture to set new routes with validation on both request and responses in a way similar to Hapi.
