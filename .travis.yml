@@ -32,6 +32,15 @@ after_script:
   - docker push $TRAVIS_REPO_SLUG:$TAG
   - docker push $TRAVIS_REPO_SLUG:$APPLICATION_VERSION
 
+  - if [ $TRAVIS_PULL_REQUEST != "false" -o $TRAVIS_BRANCH != "master" ]
+    then
+        echo "Skipping deployment on branch=$TRAVIS_BRANCH, PR=$TRAVIS_PULL_REQUEST"
+        exit 0;
+    fi
+
+  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+  - heroku plugins:install heroku-docker
+
   - docker login --email=_ --username=_ --password=$HEROKU_API_TOKEN registry.heroku.com
   - docker tag $DOCKER_IMAGE registry.heroku.com/$HEROKU_APPLICATION/app
   - heroku container:push app
