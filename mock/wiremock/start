@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+: ${WIREMOCK_PORT=8081}
+
+java -jar wiremock.jar --root-dir data --port=$WIREMOCK_PORT --verbose

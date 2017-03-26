@@ -1,0 +1,55 @@
+{
+  "name": "nodejs-bootstrap",
+  "version": "1.0.0",
+  "description": "Node.js Application Bootstrap",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start-dev": "nodemon",
+    "test": "snyk test && nsp check && && node node_modules/eslint/bin/eslint.js ./src ./test && jest --notify",
+    "test-dev": "jest --notify",
+    "lint": "node node_modules/eslint/bin/eslint.js ./src ./test",
+    "coverage": "jest --coverage && cat coverage/lcov.info | ./node_modules/.bin/coveralls"
+  },
+  "repository": "git+https://github.com/vitorsalgado/nodejs-bootstrap.git",
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Vitor Hugo Salgado <vsalgadopb@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/vitorsalgado/nodejs-bootstrap/issues"
+  },
+  "homepage": "https://github.com/vitorsalgado/nodejs-bootstrap#readme",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "joi": "^10.2.2",
+    "koa": "^2.2.0",
+    "koa-mount": "^2.0.0",
+    "koa-router": "^7.0.0",
+    "koa-send": "^3.3.0",
+    "koa-static": "^3.0.0"
+  },
+  "devDependencies": {
+    "coveralls": "^2.12.0",
+    "eslint": "^3.18.0",
+    "eslint-config-standard": "^7.1.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^2.1.1",
+    "jest": "^19.0.2",
+    "nsp": "^2.6.3",
+    "snyk": "^1.25.2"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "coverageThreshold": {
+      "global": {
+        "branches": 70,
+        "functions": 70,
+        "lines": 70,
+        "statements": 70
+      }
+    }
+  }
+}

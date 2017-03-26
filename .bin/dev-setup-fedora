@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+echo installing required softwares ...
+
+# Yarn
+sudo wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo
+
+# Docker
+dnf -y install dnf-plugins-core
+dnf config-manager \
+    --add-repo \
+    https://download.docker.com/linux/fedora/docker-ce.repo
+dnf config-manager --enable docker-ce-edge
+dnf config-manager --disable docker-ce-edge
+dnf makecache fast
+dnf install docker-ce
+systemctl start docker
+
+# Docker Compose
+pip install docker-compose
+
+echo installing required npm global packages ...
+npm i jest -g
+npm i nodemon -g
+npm i pm2 -g
+npm i snyk -g
+npm i nsp -g
+
+echo copying git pre-push hook to .git directory ...
+cp pre-push ../.git/hooks
+chmod +x .git/hooks/pre-commit
+
+echo development environment setup complete!

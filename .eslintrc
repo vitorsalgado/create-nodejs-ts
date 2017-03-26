@@ -1,0 +1,11 @@
+{
+  "extends": [
+    "standard"
+  ],
+  "rules": {
+    "object-shorthand": ["error", "never"],
+    "semi": ["off"],
+    "no-tabs": ["off"],
+    "indent": ["error", "tab", {"SwitchCase": 1}]
+  }
+}

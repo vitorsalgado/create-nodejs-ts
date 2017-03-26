@@ -1,0 +1,4 @@
+#!/bin/bash
+
+npm i
+docker-compose -f docker-compose.yml up --build

@@ -1,0 +1,6 @@
+.bin
+.hooks
+environments
+test
+wiremock
+wiremock-reloader

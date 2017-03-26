@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
+
+export APPLICATION_VERSION=$(cat package.json \
+  | grep version \
+  | head -1 \
+  | awk -F: '{ print $2 }' \
+  | sed 's/[",]//g' \
+  | tr -d '[[:space:]]')
+
+export DOCKER_REPO=$DOCKER_REPO
+export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
+
+docker build -f Dockerfile -t $DOCKER_REPO:$COMMIT .
+
+docker tag $DOCKER_REPO:$COMMIT $DOCKER_REPO:$TAG
+docker tag $DOCKER_REPO:$COMMIT $DOCKER_REPO:$APPLICATION_VERSION
+
+docker push $DOCKER_REPO

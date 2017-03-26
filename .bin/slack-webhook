@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+: ${webhook_url=<webhook_url_here>}
+
+slack_message="<your_meessage_here>."
+
+slack_webhook_post=$(curl -X POST --silent -H "Content-type: application/json" -d "{\"text\":\"$slack_message\"}" "$webhook_url")
+slack_response=$(echo "$slack_webhook_post" | grep ok | cut -d ':' -f2)
+
+[ $slack_response == "ok" ] && echo "Successfully sent message to slack"
