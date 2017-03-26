@@ -4,8 +4,8 @@ WORKDIR /app
 
 COPY package.json .
 
-RUN npm i pm2 -g --production
-RUN npm i --production
+RUN npm i pm2 -g --production -q
+RUN npm i --production -q
 
 COPY . .
 

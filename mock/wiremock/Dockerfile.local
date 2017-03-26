@@ -1,9 +1,9 @@
 FROM java:alpine
 
-WORKDIR /app
+WORKDIR /wiremock
 
 COPY wiremock.jar .
 
-VOLUME /app/data
+VOLUME /wiremock/data
 
 CMD java -jar wiremock.jar --root-dir data --port=3000 --verbose

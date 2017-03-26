@@ -1,6 +1,6 @@
 FROM mhart/alpine-node:6.10.0
 
-WORKDIR /app
+WORKDIR /wiremock
 
 COPY package.json .
 

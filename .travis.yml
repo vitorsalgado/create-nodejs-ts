@@ -17,15 +17,24 @@ before_script:
 
 after_script:
   - snyk monitor
-  - npm run coveralls
 
-after_success:
   - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-  - APPLICATION_VERSION=echo$(./.bin/version)
+
+  - APPLICATION_VERSION=$(./.bin/version)
   - DOCKER_IMAGE=nodejs-boilerplate
   - TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
+
   - docker build -t $DOCKER_IMAGE .
+
   - docker tag $DOCKER_IMAGE $TRAVIS_REPO_SLUG:$TAG
   - docker tag $DOCKER_IMAGE $TRAVIS_REPO_SLUG:$APPLICATION_VERSION
+  - docker tag $DOCKER_IMAGE registry.heroku.com/$HEROKU_APPLICATION/app
+
   - docker push $TRAVIS_REPO_SLUG:$TAG
   - docker push $TRAVIS_REPO_SLUG:$APPLICATION_VERSION
+  - docker push registry.heroku.com/$HEROKU_APPLICATION/app
+
+deploy:
+  api_key:
+    secure: jc2n9PUD99zJftMI9yQr4mOI61nIZ1/1arVvTFYFV6QCfoP2azfaa8fpUMyKyovcuvHph4kNRIXiIr1LpKrDqlEV+Dn/dZ2143G9mNA3wipYgeqGYPce7EN5h3SvN0PlPV1zc+d6hYxQACc6unVejhTkuHh0oGJD4wC6hm6P4wedUCWP3e8Oak05ssUdqIacfhgmNILMjpnoWkk51blTHmpXxor+HYUA/h+xsuvg88m87BZBx9IhRWP70jz4ktUTLhIZtwQajSMERX5rH3Wd/pgbdJPSbop2tl7NvAtkOEqIWgtcUyBlCEHVG9GLli5K+sKYla+Pou1AV/DA5UOBfkyDW3at58ZMbIB5rUgmlJR1xNHrWtvTlqwSqNSPUMfy1AQ7ACjggbbgfwjP3u4TaSOGM6o8Xjy2755yTuJWz6dvg1Yx7oNyUXtXApdi2tdmk6jKrj+lAleGtFyKoCGVHcI0LTWp4uVUVVGNbFVbOlkdZXuKsXRUjtM4TfAHWJPv1t7nx33vZZMGJ4Ebl3qX73YGo0vNwdc3n7sfuPfmAKj9VEBWZVqioNzESDzLcDWV7uW7MuiDBaNBgRqe+46hBtUZSv62xFjtl3jScFkdpTjek5LR57M+WDRes72/FTCRFdWeGzhVbDq5Sak54FEHwS9YefobD7W8lsZlkfxVHD8=
+

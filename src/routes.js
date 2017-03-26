@@ -15,12 +15,16 @@ const router = new KoaRouter();
 module.exports.load = () => FileUtils.readDirRecursively(ROUTES_PATH, file => file.indexOf('Routes') > -1)
 	.reduce((a, b) => a.concat(b))
 	.map(route => Joi.attempt(route, RouteSchema))
-	.filter(route => !route.environments || route.environments.some(env => env === 'all') || route.environments.some(env => env === process.env.NODE_ENV))
+	.filter(filterRoutes)
 	.map(sanitize);
 
 module.exports.setUp = (routes, app) => routes
 	.map(buildKoaRoute)
-	.forEach(route => app.use(route.routes()).use(route.allowedMethods()));
+	.forEach(route => setRouteInApplication(app, route));
+
+const setRouteInApplication = (app, route) => app.use(route.routes()).use(route.allowedMethods());
+
+const filterRoutes = (route) => !route.environments || route.environments.some(env => env === 'all') || route.environments.some(env => env === process.env.NODE_ENV);
 
 const buildKoaRoute = (route) => {
 	const middlewares = [];

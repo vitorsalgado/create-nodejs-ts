@@ -7,9 +7,9 @@ services:
       dockerfile: Dockerfile.local
     container_name: local_wiremock
     volumes:
-      - ../../mock/wiremock/data:/app/data
+      - ../../mock/wiremock/data:/wiremock/data
     ports:
-      - ${PORT}:8081
+      - 8081:8081
 
   wiremock_reloader:
     build:
@@ -17,7 +17,7 @@ services:
       dockerfile: Dockerfile
     container_name: local_wiremock_reloader
     volumes:
-      - ../../mock/wiremock/data:/app/data
+      - ../../mock/wiremock/data:/wiremock/data
     depends_on:
       - wiremock
 
@@ -26,10 +26,11 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: local_api
+    hostname: api
     volumes:
-      - ../../:/app
+      - ../../:/api
     ports:
-      - ${WIREMOCK_PORT}:3000
+      - 3000:3000
     links:
       - wiremock
     env_file: local.env

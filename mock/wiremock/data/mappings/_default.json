@@ -7,8 +7,7 @@
   "response": {
     "status": 404,
     "jsonBody": {
-      "traceId": "0",
-      "code": 404,
+      "statusCode": 404,
       "message": "Endpoint not found! Please, check WireMock mappings."
     },
     "headers": {

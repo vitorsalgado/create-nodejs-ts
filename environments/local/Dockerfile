@@ -1,10 +1,11 @@
-FROM mhart/alpine-node:6.10.0
+FROM mhart/alpine-node:7.7.3
 
-WORKDIR /app
+WORKDIR /api
 
-RUN npm i nodemon -g \
-    chown -R 1000:1000 /app
+RUN mkdir -p /api
+RUN chown -R 1000:1000 /api
+RUN npm i nodemon -g
 
-VOLUME /app
+VOLUME /api
 
 CMD npm run start-dev

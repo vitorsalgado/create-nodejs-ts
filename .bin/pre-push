@@ -1,5 +1,5 @@
 #!/bin/sh
 
-npm test
+npm run test-dev
 
 exit 0

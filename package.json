@@ -6,14 +6,16 @@
   "scripts": {
     "start": "node index.js",
     "start-dev": "nodemon",
-    "test": "snyk test && nsp check && node node_modules/eslint/bin/eslint.js ./src ./test && jest --notify",
-    "test-dev": "jest --notify",
+    "test": "snyk test && nsp check && node node_modules/eslint/bin/eslint.js ./src ./test && npm run coveralls",
+    "test-dev": "jest",
     "lint": "node node_modules/eslint/bin/eslint.js ./src ./test",
+    "security-check": "snyk test && nsp check",
     "coveralls": "jest --coverage && cat coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "repository": "git+https://github.com/vitorsalgado/nodejs-bootstrap.git",
   "keywords": [
-    "nodejs"
+    "nodejs",
+    "koa"
   ],
   "author": "Vitor Hugo Salgado <vsalgadopb@gmail.com>",
   "license": "Apache-2.0",
@@ -41,14 +43,15 @@
     "snyk": "^1.25.2"
   },
   "jest": {
+    "notify": false,
     "collectCoverage": true,
     "coverageDirectory": "coverage",
     "coverageThreshold": {
       "global": {
-        "branches": 70,
-        "functions": 70,
-        "lines": 70,
-        "statements": 70
+        "branches": 10,
+        "functions": 10,
+        "lines": 10,
+        "statements": 10
       }
     }
   }
