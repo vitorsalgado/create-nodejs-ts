@@ -18,7 +18,7 @@ before_script:
 after_success:
   - snyk monitor
   - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-  - APPLICATION_VERSION=$(cat package.json | grep version | head -1 | awk -F: \'{ print $2 }\' | sed 's/[",]//g' | tr -d '[[:space:]]')
+  - APPLICATION_VERSION="$(grep version package.json |awk -F : '{print $2}' | sed 's/[\",]//g')"
   - DOCKER_IMAGE=nodejs-boilerplate
   - TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
   - docker build -f Dockerfile -t $DOCKER_IMAGE .
