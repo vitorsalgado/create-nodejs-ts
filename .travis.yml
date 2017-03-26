@@ -7,10 +7,6 @@ services:
 
 cache: yarn
 
-before_install:
-  - npm i nsp -g
-  - npm i snyk -g
-
 before_script:
   - snyk auth ${SNYK_TOKEN} -d
   - snyk protect
