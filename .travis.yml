@@ -21,8 +21,8 @@ after_success:
   - APPLICATION_VERSION=./bin/version
   - DOCKER_IMAGE=nodejs-boilerplate
   - TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
-  - docker build -f Dockerfile -t $DOCKER_IMAGE .
-  - docker tag DOCKER_IMAGE $TRAVIS_REPO_SLUG:$TAG
-  - docker tag DOCKER_IMAGE $TRAVIS_REPO_SLUG:$APPLICATION_VERSION
+  - docker build -t $DOCKER_IMAGE .
+  - docker tag $DOCKER_IMAGE $TRAVIS_REPO_SLUG:$TAG
+  - docker tag $DOCKER_IMAGE $TRAVIS_REPO_SLUG:$APPLICATION_VERSION
   - docker push $TRAVIS_REPO_SLUG:$TAG
   - docker push $TRAVIS_REPO_SLUG:$APPLICATION_VERSION

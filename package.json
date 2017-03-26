@@ -9,7 +9,7 @@
     "test": "snyk test && nsp check && node node_modules/eslint/bin/eslint.js ./src ./test && jest --notify",
     "test-dev": "jest --notify",
     "lint": "node node_modules/eslint/bin/eslint.js ./src ./test",
-    "coverage": "jest --coverage && cat coverage/lcov.info | ./node_modules/.bin/coveralls"
+    "coveralls": "jest --coverage && cat coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "repository": "git+https://github.com/vitorsalgado/nodejs-bootstrap.git",
   "keywords": [
