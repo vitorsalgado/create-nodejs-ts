@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "start-dev": "nodemon",
-    "test": "snyk test && nsp check && && node node_modules/eslint/bin/eslint.js ./src ./test && jest --notify",
+    "test": "snyk test && nsp check && node node_modules/eslint/bin/eslint.js ./src ./test && jest --notify",
     "test-dev": "jest --notify",
     "lint": "node node_modules/eslint/bin/eslint.js ./src ./test",
     "coverage": "jest --coverage && cat coverage/lcov.info | ./node_modules/.bin/coveralls"

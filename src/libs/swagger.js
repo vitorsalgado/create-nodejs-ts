@@ -1,6 +1,5 @@
 'use strict';
 
-const Joi = require('joi');
 const SwaggerConfig = require('../../swagger.config.json');
 
 const DEFINITIONS_MAP = new Map();
@@ -38,15 +37,11 @@ module.exports.buildDocumentation = (routes, path) => {
 		}
 
 		operation.parameters = Object.keys(route.request)
-			.map(key => {return { key: key, value: route.request[key] }})
-			.map(pair => {
-				console.log('[SWAGGER]', pair.value.schema.describe());
-				return pair;
-			})
+			.map(key => { return { key: key, value: route.request[key] } })
 			.map(pair => buildParameter(pair.value.schema, pair.key));
 	});
 
-	DEFINITIONS_MAP.forEach((v, k) => definitions[k] = v);
+	DEFINITIONS_MAP.forEach((v, k) => { definitions[k] = v });
 
 	SwaggerConfig.paths = paths;
 	SwaggerConfig.definitions = definitions;
@@ -132,13 +127,10 @@ const buildDefinition = (schema, target) => {
 		return;
 	}
 
-	const required = [];
-	const optional = [];
-
 	const definition = {
 		type: TYPE_OBJECT,
 		properties: Object.keys(schema.children)
-			.map(key => { return { key: key, value: schema.children[key] }})
+			.map(key => { return { key: key, value: schema.children[key] } })
 			.map(pair => parseSchema(pair.value, target, pair.key))
 	};
 

@@ -1,7 +1,7 @@
 'use strict';
 
 class BadRequest extends Error {
-	constructor(data, message = 'Bad Request') {
+	constructor (data, message = 'Bad Request') {
 		super(message);
 		this.status = 400;
 		this.data = data;
@@ -9,14 +9,14 @@ class BadRequest extends Error {
 }
 
 class Unauthorized extends Error {
-	constructor(message = 'Unauthorized') {
+	constructor (message = 'Unauthorized') {
 		super(message);
 		this.status = 401;
 	}
 }
 
 class NotFound extends Error {
-	constructor(message = 'Not Found') {
+	constructor (message = 'Not Found') {
 		super(message);
 		this.status = 404;
 	}
