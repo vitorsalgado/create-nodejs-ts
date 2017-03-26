@@ -24,4 +24,5 @@ after_success:
   - docker build -f Dockerfile -t $DOCKER_IMAGE .
   - docker tag DOCKER_IMAGE $TRAVIS_REPO_SLUG:$TAG
   - docker tag DOCKER_IMAGE $TRAVIS_REPO_SLUG:$APPLICATION_VERSION
-  - docker push
+  - docker push $TRAVIS_REPO_SLUG:$TAG
+  - docker push $TRAVIS_REPO_SLUG:$APPLICATION_VERSION
