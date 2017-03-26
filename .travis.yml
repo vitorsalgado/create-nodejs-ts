@@ -12,6 +12,7 @@ before_script:
   - snyk protect
 
 after_script:
+  - codeclimate-test-reporter < coverage/lcov.info
   - snyk monitor
 
   # Docker Hub Deploy
@@ -40,7 +41,7 @@ after_script:
 
   - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
-  - docker login --email=_ --username=_ --password=$HEROKU_API_TOKEN registry.heroku.com
+  - docker login --email=_ --username=_ --password=$HEROKU_API_KEY registry.heroku.com
   - docker tag $DOCKER_IMAGE registry.heroku.com/$HEROKU_APPLICATION/web
   - docker push registry.heroku.com/$HEROKU_APPLICATION/web
 

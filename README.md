@@ -1,6 +1,7 @@
 # Node.js Boilerplate Application
 [![Build Status](https://travis-ci.org/vitorsalgado/nodejs-bootstrap.svg?branch=master)](https://travis-ci.org/vitorsalgado/nodejs-bootstrap) 
 [![CircleCI](https://circleci.com/gh/vitorsalgado/nodejs-bootstrap.svg?style=svg)](https://circleci.com/gh/vitorsalgado/nodejs-bootstrap)
+[![Code Climate](https://codeclimate.com/github/vitorsalgado/nodejs-bootstrap/badges/gpa.svg)](https://codeclimate.com/github/vitorsalgado/nodejs-bootstrap)
 [![node version][node-image]][node-url]
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
@@ -37,6 +38,7 @@ The libraries and tools used include:
  
 ## Code Quality
 [![Coverage Status](https://coveralls.io/repos/github/vitorsalgado/nodejs-bootstrap/badge.svg?branch=master)](https://coveralls.io/github/vitorsalgado/nodejs-bootstrap?branch=master)
+[![Test Coverage](https://codeclimate.com/github/vitorsalgado/nodejs-bootstrap/badges/coverage.svg)](https://codeclimate.com/github/vitorsalgado/nodejs-bootstrap/coverage)
 [![codebeat badge](https://codebeat.co/badges/3d39baa4-d902-4648-9c5e-6ba5641a7924)](https://codebeat.co/projects/github-com-vitorsalgado-nodejs-bootstrap-master)
 [![Known Vulnerabilities](https://snyk.io/test/github/vitorsalgado/nodejs-bootstrap/badge.svg)](https://snyk.io/test/github/vitorsalgado/nodejs-bootstrap)  
 This project comes with a combination of unit tests, code analysis tools and a API mock already set.  
