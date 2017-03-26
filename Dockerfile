@@ -9,4 +9,7 @@ RUN npm i --production -q
 
 COPY . .
 
+RUN adduser -D node
+USER node
+
 CMD npm start
