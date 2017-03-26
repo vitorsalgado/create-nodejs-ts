@@ -14,6 +14,8 @@ before_script:
 after_script:
   - snyk monitor
 
+  # Docker Hub Deploy
+
   - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
   - APPLICATION_VERSION=$(./.bin/version)
@@ -34,6 +36,12 @@ after_script:
         exit 0;
     fi
 
+  # Heroku Deploy
+
+  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
   - docker login --email=_ --username=_ --password=$HEROKU_API_TOKEN registry.heroku.com
   - docker tag $DOCKER_IMAGE registry.heroku.com/$HEROKU_APPLICATION/web
   - docker push registry.heroku.com/$HEROKU_APPLICATION/web
+
+  - heroku ps:scale web=1 -a $HEROKU_APPLICATION

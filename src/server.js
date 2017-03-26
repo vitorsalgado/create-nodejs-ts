@@ -1,6 +1,5 @@
 'use strict';
 
-const HTTPS = require('https');
 const Koa = require('koa');
 const KoaStatic = require('koa-static');
 const KoaMount = require('koa-mount');
@@ -27,10 +26,6 @@ module.exports.start = () => new Promise((resolve, reject) => {
 	// app.use(HealthRoutes.allowedMethods());
 
 	app.listen(Config.port);
-
-	if (process.env.NODE_ENV === 'production') {
-		HTTPS.createServer({}, app.callback()).listen(443);
-	}
 
 	return resolve(app);
 });
