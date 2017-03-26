@@ -1,5 +1,5 @@
 #!/bin/bash
 
-VERSION="$(grep version ../package.json |awk -F : '{print $2}' | sed 's/[\",]//g')"
+VERSION="$(grep version ./package.json |awk -F : '{print $2}' | sed 's/[\",]//g')"
 
 echo $VERSION

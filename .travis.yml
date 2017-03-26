@@ -15,10 +15,13 @@ before_script:
   - snyk auth ${SNYK_TOKEN} -d
   - snyk protect
 
-after_success:
+after_script:
   - snyk monitor
+  - npm run coveralls
+
+after_success:
   - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-  - APPLICATION_VERSION=./bin/version
+  - APPLICATION_VERSION=echo$(./.bin/version)
   - DOCKER_IMAGE=nodejs-boilerplate
   - TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
   - docker build -t $DOCKER_IMAGE .
