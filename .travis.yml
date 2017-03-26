@@ -43,4 +43,4 @@ after_script:
 
   - docker login --email=_ --username=_ --password=$HEROKU_API_TOKEN registry.heroku.com
   - docker tag $DOCKER_IMAGE registry.heroku.com/$HEROKU_APPLICATION/app
-  - heroku container:push app
+  - docker push registry.heroku.com/$HEROKU_APPLICATION/app
