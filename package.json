@@ -7,7 +7,7 @@
     "start": "node index.js",
     "start-dev": "nodemon",
     "test": "snyk test && nsp check && node node_modules/eslint/bin/eslint.js ./src ./test && npm run coveralls",
-    "test-dev": "jest",
+    "test-dev": "snyk test && nsp check && node node_modules/eslint/bin/eslint.js ./src ./test && jest",
     "lint": "node node_modules/eslint/bin/eslint.js ./src ./test",
     "security-check": "snyk test && nsp check",
     "coveralls": "jest --coverage && cat coverage/lcov.info | ./node_modules/.bin/coveralls"
@@ -41,7 +41,8 @@
     "eslint-plugin-standard": "^2.1.1",
     "jest": "^19.0.2",
     "nsp": "^2.6.3",
-    "snyk": "^1.25.2"
+    "snyk": "^1.25.2",
+    "supertest": "^3.0.0"
   },
   "jest": {
     "notify": false,

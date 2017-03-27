@@ -1,9 +1,10 @@
 'use strict';
 
+const FileSystem = require('fs');
+
 const SwaggerConfig = require('../../swagger.config.json');
 
 const DEFINITIONS_MAP = new Map();
-
 const TYPE_ARRAY = 'array';
 const TYPE_OBJECT = 'object';
 
@@ -45,6 +46,8 @@ module.exports.buildDocumentation = (routes, path) => {
 
 	SwaggerConfig.paths = paths;
 	SwaggerConfig.definitions = definitions;
+
+	FileSystem.writeFileSync('./wwwroot/swagger/swagger.json', Buffer.from(JSON.stringify(SwaggerConfig), 2, 2));
 
 	return SwaggerConfig;
 };

@@ -2,5 +2,5 @@
 .hooks
 environments
 test
-wiremock
-wiremock-reloader
+mock
+wwwroot

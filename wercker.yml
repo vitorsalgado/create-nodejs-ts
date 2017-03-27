@@ -1,0 +1,22 @@
+box: node:7.7.3
+build:
+  steps:
+    - script:
+      name: nodejs information
+      code: echo "node version $(node -v) running" && echo "npm version $(npm -v) running"
+
+    - script:
+      name: install yarn
+      code: npm i -g yarn
+
+    - script:
+      name: set yarn cache
+      code: yarn config set cache-folder $WERCKER_CACHE_DIR/yarn
+
+    - script:
+      name: install dependencies
+      code: yarn
+
+    - script:
+      name: unit tests
+      code: npm test

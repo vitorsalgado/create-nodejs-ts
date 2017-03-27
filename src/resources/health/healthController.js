@@ -1,5 +1,3 @@
 'use strict';
 
-module.exports.check = async(ctx, next) => {
-	ctx.body = 'ok';
-};
+module.exports.check = (ctx) => { ctx.status = 204 };

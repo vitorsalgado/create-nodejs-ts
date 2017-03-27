@@ -20,7 +20,8 @@ const route = Joi.object({
 		params: request
 	}),
 	response: Joi.object({
-		200: Joi.object()
+		200: Joi.object(),
+		204: Joi.object()
 	}).optional()
 });
 

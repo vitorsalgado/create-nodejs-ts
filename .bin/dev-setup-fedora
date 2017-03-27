@@ -14,20 +14,18 @@ dnf config-manager --enable docker-ce-edge
 dnf config-manager --disable docker-ce-edge
 dnf makecache fast
 dnf install docker-ce
+
 systemctl start docker
 
 # Docker Compose
 pip install docker-compose
 
-echo installing required npm global packages ...
-npm i jest -g
-npm i nodemon -g
-npm i pm2 -g
-npm i snyk -g
-npm i nsp -g
+# NPM packages
+npm i -q jest -g
+npm i -q nodemon -g
+npm i -q snyk -g
+npm i -q nsp -g
 
-echo copying git pre-push hook to .git directory ...
-cp pre-push ../.git/hooks
-chmod +x .git/hooks/pre-commit
+yarn
 
 echo development environment setup complete!
