@@ -8,9 +8,9 @@
     "test": true,
     "expect": true,
     "sinon": true,
-    "before": true,
+    "beforeAll": true,
     "beforeEach": true,
-    "after": true,
+    "afterAll": true,
     "afterEach": true
   }
 }

@@ -44,16 +44,8 @@ The libraries and tools used include:
 
 This project comes with a combination of unit tests, code analysis tools and a API mock already set.  
 They are all integrated in Travis CI execution pipeline.  
-To run all test and local analysis tools at once, run:  
-```
-npm run test-dev
-```
+
 Check `package.json` scripts section for more details. 
- 
-### Security Analysis
-```
-npm run security-check
-```
 
 ## API Mock
 The project comes with **WireMock** already set to easy mock external API calls. It also comes with a small Node.js application that automatic 
