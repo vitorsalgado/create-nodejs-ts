@@ -1,0 +1,8 @@
+exclude_paths:
+- "tests/"
+- "mock/"
+- "wwwroot/"
+- "integration_tests/"
+- "environments/"
+- ".bin/"
+- "coverage/"

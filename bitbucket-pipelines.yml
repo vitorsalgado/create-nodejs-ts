@@ -4,9 +4,8 @@ pipelines:
     - step:
         script:
           # installing dependencies
-          - npm i nsp -g
-          - npm i snyk -g
-          - npm i
+          - export PATH=./node_modules/.bin:$PATH
+          - npm i -q
 
           # initial setup
           - snyk auth ${SNYK_TOKEN} -d
