@@ -58,9 +58,8 @@ typings/
 .env
 
 .bin
-.hooks
-wiremock
-wiremock-reloader
+environments
+mock
 .eslintrc
 .git
 .gitignore
