@@ -8,7 +8,7 @@ describe('GET /health', () => {
 
 	afterAll(() => Server.stop());
 
-	test('should response with 204', () =>
+	test('should response with 200', () =>
 		SuperTest(Server.get()).get('/health')
-			.expect(204));
+			.expect(200));
 });
