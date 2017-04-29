@@ -16,7 +16,7 @@ It comes with a simple framework for rest APIs build on top of Koa, Joi and some
 [![Dependency Status](https://david-dm.org/vitorsalgado/nodejs-bootstrap.svg)](https://david-dm.org/vitorsalgado/nodejs-bootstrap)
 [![devDependency Status](https://david-dm.org/vitorsalgado/nodejs-bootstrap/dev-status.svg)](https://david-dm.org/vitorsalgado/nodejs-bootstrap#info=devDependencies)
 
-libraries included:
+Libraries included:
 * [Koa](https://github.com/koajs/koa);
 * [Koa Router](https://github.com/alexmingoia/koa-router) for routing;
 * [Joi](https://github.com/hapijs/joi) for schema validations;
@@ -45,7 +45,7 @@ See [WireMock](http://wiremock.org/) for more details.
 ## Continuous Integration and Delivery
 [Travis CI](https://travis-ci.org/) is the solution for Continuous Delivery.   
 All tests and local code analysis tools are integrated in Travis pipeline.  
-After successfully pass all tests and code analysis, the application is deployed to [Heroku](https://www.heroku.com/) and [Docker Hub](https://hub.docker.com/) using Docker.
+After successfully pass all tests and code analysis, the application is deployed to [Heroku](https://www.heroku.com/) and [Docker Hub](https://hub.docker.com/).
 
 ## License
 This project is available under Apache Public License version 2.0. See [LICENSE](LICENSE).
