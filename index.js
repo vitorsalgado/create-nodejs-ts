@@ -4,9 +4,15 @@ require('dotenv').config({ silent: true });
 
 const Server = require('./src/server');
 
-Server()
-	.then(console.log(`started and listening on port ${process.env.PORT}`))
-	.catch(err => {
-		console.log(err);
-		process.exit(1);
-	});
+const closeServer = () => {
+	Server.stop();
+	process.exit(0);
+};
+
+process.on('SIGTERM', () => closeServer());
+
+process.on('SIGINT', () => closeServer());
+
+Server.start();
+
+console.log(`server started and is listening on port ${process.env.PORT}`);

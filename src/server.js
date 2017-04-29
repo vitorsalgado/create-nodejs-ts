@@ -5,24 +5,31 @@ const KoaStatic = require('koa-static');
 const KoaMount = require('koa-mount');
 const Cors = require('./libs/middlewares/cors');
 
-const Routes = require('./routes');
+const Routing = require('./libs/routing');
 const Swagger = require('./libs/swagger');
-const Config = require('./config/config');
+const Config = require('./config');
 const ErrorHandler = require('./libs/middlewares/errors');
 
-module.exports = () => new Promise((resolve, reject) => {
-	const app = new Koa();
-	const routes = Routes.load();
+const app = new Koa();
+const routes = Routing.load();
 
-	app.use(ErrorHandler);
+let server;
 
-	Routes.setUp(routes, app);
-	Swagger.buildDocumentation(routes);
+app.use(ErrorHandler);
 
-	app.use(KoaMount('/', KoaStatic('wwwroot/swagger')));
-	app.use(Cors());
+Routing.setUp(routes, app);
+Swagger.buildDocumentation(routes);
 
-	const server = app.listen(Config.port);
+app.use(KoaMount('/', KoaStatic('wwwroot/swagger')));
+app.use(Cors());
 
-	return resolve(server);
-});
+app.on('error', err => console.log('server error', err));
+
+module.exports.get = () => server;
+
+module.exports.start = () => {
+	server = app.listen(Config.port);
+	return server;
+};
+
+module.exports.stop = () => server.close;

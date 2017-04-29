@@ -19,7 +19,7 @@ after_script:
 
   - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
-  - APPLICATION_VERSION=$(./.bin/version)
+  - APPLICATION_VERSION=$(./version)
   - DOCKER_IMAGE=nodejs-boilerplate
   - TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
 

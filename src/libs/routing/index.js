@@ -4,11 +4,11 @@ const KoaRouter = require('koa-router');
 const Path = require('path');
 const Joi = require('joi');
 
-const FileUtils = require('./libs/fileUtils');
-const RouteSchema = require('./libs/core/routeSchema');
-const ContextValidator = require('./libs/middlewares/contextValidator');
+const FileUtils = require('../fileUtils');
+const RouteSchema = require('./routeSchema');
+const ContextValidator = require('../middlewares/contextValidator');
 
-const ROUTES_PATH = Path.join(__dirname, './resources');
+const ROUTES_PATH = Path.join(__dirname, '../../resources');
 
 const router = new KoaRouter();
 

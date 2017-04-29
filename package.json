@@ -1,7 +1,7 @@
 {
-  "name": "nodejs-bootstrap",
-  "version": "1.0.0",
-  "description": "Node.js Application Bootstrap",
+  "name": "nodejs-boilerplate",
+  "version": "0.0.1",
+  "description": "Node.js Boilerplate",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -15,7 +15,8 @@
   "repository": "git+https://github.com/vitorsalgado/nodejs-bootstrap.git",
   "keywords": [
     "nodejs",
-    "koa"
+    "koa",
+    "boilerplate"
   ],
   "author": "Vitor Hugo Salgado <vsalgadopb@gmail.com>",
   "license": "Apache-2.0",
@@ -47,7 +48,7 @@
   "jest": {
     "notify": false,
     "collectCoverage": true,
-    "coverageDirectory": "coverage",
+    "coverageDirectory": "reports/coverage",
     "coverageThreshold": {
       "global": {
         "branches": 10,

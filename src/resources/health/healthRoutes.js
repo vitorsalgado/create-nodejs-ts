@@ -1,13 +1,18 @@
 'use strict';
 
-const HealthController = require('./healthController');
+const HealthSchema = require('./healthSchema');
 
 const health = {
 	tags: ['system'],
 	path: '/health',
-	handler: HealthController.check,
+	handler: (ctx) => {
+		ctx.body = {
+			status: 'UP',
+			uptime: process.uptime()
+		};
+	},
 	response: {
-		204: { description: 'API is live' }
+		200: { description: 'API health check', schema: HealthSchema }
 	}
 };
 

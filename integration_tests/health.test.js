@@ -4,13 +4,11 @@ const SuperTest = require('supertest');
 const Server = require('../src/server');
 
 describe('GET /health', () => {
-	let server;
+	beforeAll(() => Server.start());
 
-	beforeAll(() => Server().then(koaServer => { server = koaServer; }));
-
-	afterAll(() => server.close());
+	afterAll(() => Server.stop());
 
 	test('should response with 204', () =>
-		SuperTest(server).get('/health')
+		SuperTest(Server.get()).get('/health')
 			.expect(204));
 });
