@@ -1,0 +1,22 @@
+version: '2'
+services:
+
+  wiremock:
+    build:
+      context: ./wiremock
+      dockerfile: Dockerfile.local
+    container_name: local_wiremock
+    volumes:
+      - ./wiremock/data:/wiremock/data
+    ports:
+      - 8081:8081
+
+  wiremock_reloader:
+    build:
+      context: ./wiremock-auto-reloader
+      dockerfile: Dockerfile
+    container_name: local_wiremock_reloader
+    volumes:
+      - ./wiremock/data:/wiremock/data
+    depends_on:
+      - wiremock

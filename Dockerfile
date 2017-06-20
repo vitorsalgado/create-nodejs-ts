@@ -1,15 +1,13 @@
-FROM mhart/alpine-node:7.7.3
+FROM node:8.0.0
 
 WORKDIR /app
 
-COPY package.json .
+COPY package.json yarn.lock /
 
-RUN npm i pm2 -g --production -q
-RUN npm i --production -q
+RUN yarn --production
 
 COPY . .
 
-RUN adduser -D node
 USER node
 
-CMD ["npm","start"]
+CMD npm start

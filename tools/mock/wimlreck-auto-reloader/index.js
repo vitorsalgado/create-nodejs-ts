@@ -6,7 +6,6 @@ const Chokidar = require('chokidar');
 const watcher = Chokidar.watch('./data', { ignored: /[/\\]\./, persistent: true, ignoreInitial: true });
 
 const onFileChange = (event, path) => {
-
 	const valid = path && path.length > 5 && path.substr(path.length - 5) === '.json';
 
 	if (!valid) {
@@ -16,7 +15,7 @@ const onFileChange = (event, path) => {
 	console.log('File change detected. Reseting Wiremock mappings ...');
 
 	const options = {
-		url: 'http://wiremock:3000/__admin/mappings/reset',
+		url: 'http://wiremock:8081/__admin/mappings/reset',
 		method: 'POST',
 		json: true
 	};

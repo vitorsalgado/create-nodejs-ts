@@ -12,9 +12,16 @@ const ROUTES_PATH = Path.join(__dirname, '../../resources');
 
 const router = new KoaRouter();
 
-module.exports.load = () => FileUtils.readDirRecursively(ROUTES_PATH, file => file.indexOf('Routes') > -1)
+module.exports.load = () => FileUtils.readDirRecursively(ROUTES_PATH, file => file.indexOf('index') > -1)
 	.reduce((a, b) => a.concat(b))
-	.map(route => Joi.attempt(route, RouteSchema))
+	.map(route => {
+		try {
+			return Joi.attempt(route, RouteSchema)
+		} catch (ex) {
+			console.log('Route SetUp', `Route ${route.path} - ${route.description} setup failed!`);
+			throw ex;
+		}
+	})
 	.filter(filterRoutes)
 	.map(sanitize);
 
@@ -27,24 +34,27 @@ const setRouteInApplication = (app, route) => app.use(route.routes()).use(route.
 const filterRoutes = (route) => !route.environments || route.environments.some(env => env === 'all') || route.environments.some(env => env === process.env.NODE_ENV);
 
 const buildKoaRoute = (route) => {
-	const middlewares = [];
+	const middlewareList = [];
 
-	Object.keys(route.request)
-		.map(key => { return { key: key, req: route.request[key] } })
-		.filter(pair => pair.req.validate)
-		.forEach(pair => middlewares.push(ContextValidator.validate(pair.req.schema, pair.key.toString())));
+	// adding validators for request ( querystring, headers, params ... )
+	addValidators(route.request, middlewareList);
 
-	middlewares.push(route.handler);
+	// main route handler
+	middlewareList.push(route.handler);
 
-	Object.keys(route.response)
-		.map(key => { return { key: key, res: route.response[key] } })
-		.filter(pair => pair.res.validate)
-		.forEach(pair => middlewares.push(ContextValidator.validate(pair.res.schema, pair.key.toString())));
+	// adding validators for response
+	addValidators(route.response, middlewareList);
 
-	router[route.method](route.path, ...middlewares);
+	// setting middleware list to Koa router
+	router[route.method](route.path, ...middlewareList);
 
 	return router;
 };
+
+const addValidators = (ctx, middlewares) => Object.keys(ctx)
+	.map(key => { return { key: key, value: ctx[key] } })
+	.filter(pair => pair.value.validate)
+	.forEach(pair => middlewares.push(ContextValidator.validate(pair.value.schema, pair.key.toString())));
 
 const sanitize = (route) => {
 	route.request = route.request || {};

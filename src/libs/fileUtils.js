@@ -1,3 +1,5 @@
+/* eslint-disable security/detect-non-literal-require */
+
 'use strict';
 
 const FileSystem = require('fs');
@@ -13,7 +15,7 @@ const readDirRecursively = (dir, predicate) => {
 
 		if (stat && stat.isDirectory()) {
 			results = results.concat(readDirRecursively(file, predicate));
-		} else if (predicate(file)) {
+		} else if (typeof predicate === 'undefined' || predicate(file)) {
 			results.push(require(file));
 		}
 	});

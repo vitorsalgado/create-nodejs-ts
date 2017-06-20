@@ -1,10 +1,9 @@
-FROM mhart/alpine-node:7.7.3
+FROM mhart/alpine-node:8.0.0
 
-WORKDIR /api
+WORKDIR /app
 
-RUN chown -R 1000:1000 /api
-RUN npm i nodemon -g
+RUN yarn
 
-VOLUME /api
+VOLUME /app
 
-CMD npm run start-dev
+CMD npm run devl

@@ -1,5 +1,0 @@
-#!/bin/sh
-
-npm run test-dev
-
-exit 0

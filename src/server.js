@@ -3,7 +3,7 @@
 const Koa = require('koa');
 const KoaStatic = require('koa-static');
 const KoaMount = require('koa-mount');
-const Cors = require('./libs/middlewares/cors');
+const Kors = require('kcors');
 
 const Routing = require('./libs/routing');
 const Swagger = require('./libs/swagger');
@@ -21,7 +21,7 @@ Routing.setUp(routes, app);
 Swagger.buildDocumentation(routes);
 
 app.use(KoaMount('/', KoaStatic('wwwroot/swagger')));
-app.use(Cors());
+app.use(Kors());
 
 app.on('error', err => console.log('server error', err));
 

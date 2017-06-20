@@ -24,11 +24,9 @@ services:
   api:
     build:
       context: .
-      dockerfile: Dockerfile
     container_name: local_api
-    hostname: api
     volumes:
-      - ../../:/api
+      - ../../:/app
     ports:
       - 3000:3000
     links:
