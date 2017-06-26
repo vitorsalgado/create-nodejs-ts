@@ -4,7 +4,6 @@ const Package = require('../../package.json');
 
 const server = {
 	port: process.env.PORT
-
 };
 
 const ensureConfiguration = () => {

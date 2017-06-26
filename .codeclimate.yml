@@ -1,8 +1,8 @@
 exclude_paths:
 - "tests/"
-- "mock/"
+- "tools/"
 - "wwwroot/"
 - "integration_tests/"
-- "environments/"
-- ".bin/"
-- "coverage/"
+- "envs/"
+- "docs/"
+- "reports/"

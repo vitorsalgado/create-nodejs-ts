@@ -29,6 +29,8 @@ module.exports.get = () => server;
 
 module.exports.start = () => {
 	server = app.listen(Config.port);
+	console.log(`Server started and is listening on port ${process.env.PORT}`);
+
 	return server;
 };
 

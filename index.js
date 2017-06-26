@@ -17,7 +17,7 @@ console.log(banner.toString());
 
 console.log(`Version:  	${Config.version}`);
 console.log(`Env: 		${Config.environment}`);
-console.log(`Trace:		${Config.isTraceEnabled ? 'On' : 'Off'}`);
+console.log(`Trace:		${Config.isTraceEnabled ? 'On' : 'Off'}\n\n`);
 
 const closeServer = () => {
 	Server.stop();
@@ -28,6 +28,9 @@ process.on('SIGTERM', () => closeServer());
 
 process.on('SIGINT', () => closeServer());
 
-Server.start();
-
-console.log(`server started and is listening on port ${process.env.PORT}`);
+Promise.all(
+	[
+		Config.ensureConfiguration()
+	])
+	.then(() => Server.start())
+	.catch(err => console.error(err));
