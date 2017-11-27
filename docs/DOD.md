@@ -1,1 +1,0 @@
-# DoD - Definition of Done

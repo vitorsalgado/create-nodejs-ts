@@ -1,8 +1,3 @@
 exclude_paths:
-- "tests/"
-- "tools/"
-- "wwwroot/"
-- "integration_tests/"
-- "envs/"
 - "docs/"
 - "reports/"

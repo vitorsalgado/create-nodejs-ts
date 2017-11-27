@@ -11,38 +11,11 @@ before_script:
   - snyk auth ${SNYK_TOKEN} -d
   - snyk protect
 
+script:
+  make test:docker
+  make docker-build
+  make docker-cleanup
+
 after_script:
   - codeclimate-test-reporter < coverage/lcov.info
   - snyk monitor
-
-  # Docker Hub Deploy
-
-  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-
-  - APPLICATION_VERSION=$(./version)
-  - DOCKER_IMAGE=nodejs-boilerplate
-  - TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
-
-  - docker build -t $DOCKER_IMAGE .
-
-  - docker tag $DOCKER_IMAGE $TRAVIS_REPO_SLUG:$TAG
-  - docker tag $DOCKER_IMAGE $TRAVIS_REPO_SLUG:$APPLICATION_VERSION
-
-  - docker push $TRAVIS_REPO_SLUG:$TAG
-  - docker push $TRAVIS_REPO_SLUG:$APPLICATION_VERSION
-
-  - if [ $TRAVIS_PULL_REQUEST != "false" -o $TRAVIS_BRANCH != "master" ]
-    then
-        echo "Skipping deployment on branch=$TRAVIS_BRANCH, PR=$TRAVIS_PULL_REQUEST"
-        exit 0;
-    fi
-
-  # Heroku Deploy
-
-  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-
-  - docker login --email=_ --username=_ --password=$HEROKU_API_KEY registry.heroku.com
-  - docker tag $DOCKER_IMAGE registry.heroku.com/$HEROKU_APPLICATION/web
-  - docker push registry.heroku.com/$HEROKU_APPLICATION/web
-
-  - heroku ps:scale web=1 -a $HEROKU_APPLICATION

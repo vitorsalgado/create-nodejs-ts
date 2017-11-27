@@ -1,65 +1,78 @@
 {
-  "name": "nodejs-boilerplate",
-  "version": "0.0.1",
-  "description": "Node.js Boilerplate",
+  "name": "nodejs-toolkit",
+  "version": "1.0.0",
+  "description": "Node.js Development Toolkit",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon -e js,env --ignore envs/ --ignore tests/ --ignore docs/",
-    "test": "snyk test && nsp check && node node_modules/eslint/bin/eslint.js ./src ./test && npm run coveralls",
-    "test-dev": "jest",
-    "lint": "node node_modules/eslint/bin/eslint.js ./src ./test",
-    "security-check": "snyk test && nsp check",
+    "start": "node index",
+    "start:dev": "nodemon --exec 'node -r dotenv/config index.js'",
+    "test": "jest",
+    "test:cover": "jest --coverage",
+    "lint": "eslint ./src ./__tests__",
+    "security:check": "snyk protect && nsp check --output summary",
     "coveralls": "jest --coverage && cat coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
-  "repository": "git+https://github.com/vitorsalgado/nodejs-bootstrap.git",
-  "keywords": [
-    "nodejs",
-    "koa",
-    "boilerplate"
-  ],
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "private": true,
   "author": "Vitor Hugo Salgado <vsalgadopb@gmail.com>",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/vitorsalgado/nodejs-bootstrap/issues"
-  },
-  "homepage": "https://github.com/vitorsalgado/nodejs-bootstrap#readme",
   "dependencies": {
     "dotenv": "^4.0.0",
-    "joi": "^10.2.2",
-    "kcors": "2",
-    "koa": "^2.2.0",
-    "koa-mount": "^2.0.0",
-    "koa-router": "^7.0.0",
-    "koa-send": "^3.3.0",
-    "koa-static": "^3.0.0",
-    "mongoose": "^4.9.6"
+    "joi": "^13.0.2"
   },
   "devDependencies": {
-    "codeclimate-test-reporter": "^0.4.1",
-    "coveralls": "^2.12.0",
-    "eslint": "^3.18.0",
+    "codeclimate-test-reporter": "^0.5.0",
+    "commander": "^2.12.1",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.11.0",
     "eslint-config-nodesecurity": "^1.3.1",
-    "eslint-config-standard": "^7.1.0",
-    "eslint-plugin-promise": "^3.5.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-security": "^1.4.0",
-    "eslint-plugin-standard": "^2.1.1",
-    "jest": "^19.0.2",
-    "nsp": "^2.6.3",
-    "snyk": "^1.25.2",
-    "supertest": "^3.0.0"
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^21.2.1",
+    "nodemon": "^1.12.1",
+    "nsp": "^3.1.0",
+    "semver": "^5.4.1",
+    "snyk": "^1.50.0"
   },
   "jest": {
     "notify": false,
-    "collectCoverage": true,
-    "coverageDirectory": "reports/coverage",
+    "verbose": true,
+    "clearMocks": true,
+    "resetMocks": true,
+    "testEnvironment": "node",
     "coverageThreshold": {
       "global": {
-        "branches": 10,
-        "functions": 10,
-        "lines": 10,
-        "statements": 10
+        "branches": 70,
+        "functions": 70,
+        "lines": 70,
+        "statements": 70
       }
-    }
+    },
+    "coverageDirectory": "reports/coverage",
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/src/config/",
+      "<rootDir>/src/libs/testUtils.js",
+      "/scripts/"
+    ],
+    "testMatch": [
+      "**/?(*.)(spec|test).js?(x)"
+    ],
+    "modulePathIgnorePatterns": [
+      "/scripts/"
+    ],
+    "testPathIgnorePatterns": [
+      "__tests__/(fixtures|__mocks__)/",
+      "/_(temp|mock|install|init|helpers|utils).js$"
+    ]
   }
 }

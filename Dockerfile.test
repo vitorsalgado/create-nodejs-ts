@@ -1,0 +1,10 @@
+FROM node:8.9.1
+
+WORKDIR /app
+VOLUME /app
+
+COPY package.json package-lock.json ./
+
+RUN npm install
+
+CMD npm run test:cover
