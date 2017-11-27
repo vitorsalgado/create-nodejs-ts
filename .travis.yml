@@ -17,5 +17,5 @@ script:
   - make docker-cleanup
 
 after_script:
-  - codeclimate-test-reporter < coverage/lcov.info
+  - codeclimate-test-reporter < reports/coverage/lcov.info
   - snyk monitor

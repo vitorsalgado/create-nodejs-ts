@@ -10,7 +10,7 @@
     "test:cover": "npm run lint && jest --coverage",
     "lint": "eslint ./src",
     "security:check": "snyk protect && nsp check --output summary",
-    "coveralls": "jest --coverage && cat coverage/lcov.info | ./node_modules/.bin/coveralls"
+    "coveralls": "jest --coverage && cat reports/coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "engines": {
     "node": ">=8.9.0"
