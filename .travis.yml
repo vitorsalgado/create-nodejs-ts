@@ -12,7 +12,7 @@ before_script:
   - snyk protect
 
 script:
-  make test:docker
+  make test-docker
   make docker-build
   make docker-cleanup
 
