@@ -7,7 +7,7 @@
     "start": "node index",
     "start:dev": "nodemon --exec 'node -r dotenv/config index.js'",
     "test": "jest",
-    "test:cover": "jest --coverage",
+    "test:cover": "npm run lint && jest --coverage",
     "lint": "eslint ./src",
     "security:check": "snyk protect && nsp check --output summary",
     "coveralls": "jest --coverage && cat coverage/lcov.info | ./node_modules/.bin/coveralls"

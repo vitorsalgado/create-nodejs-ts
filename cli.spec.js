@@ -21,4 +21,4 @@ describe('cli tool', () => {
 			done();
 		});
 	});
-})
+});
