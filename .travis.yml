@@ -12,9 +12,9 @@ before_script:
   - snyk protect
 
 script:
-  make test-docker
-  make docker-build
-  make docker-cleanup
+  - make test-docker
+  - make docker-build
+  - make docker-cleanup
 
 after_script:
   - codeclimate-test-reporter < coverage/lcov.info
