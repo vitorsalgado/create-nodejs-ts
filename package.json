@@ -18,6 +18,11 @@
   "private": true,
   "author": "Vitor Hugo Salgado <vsalgadopb@gmail.com>",
   "license": "Apache-2.0",
+  "repository": "git+https://github.com/vitorsalgado/nodejs-boilerplate.git",
+  "bugs": {
+    "url": "https://github.com/vitorsalgado/nodejs-boilerplate/issues"
+  },
+  "homepage": "https://github.com/vitorsalgado/nodejs-boilerplate#readme",
   "dependencies": {
     "dotenv": "^4.0.0",
     "joi": "^13.0.2"
