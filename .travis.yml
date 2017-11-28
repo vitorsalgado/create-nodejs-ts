@@ -23,16 +23,13 @@ after_script:
 before_deploy:
   - git config --local user.name vitorsalgado
   - git config --local user.email vsalgadopb@gmail.com
+  - git tag $(node cli version)
+  - git push origin --tags
 
 deploy:
-    - provider: npm
-      skip_cleanup: true
-      email: ${NPM_EMAIL}
-      api_key: ${NPM_AUTH_TOKEN}
-      on:
-        branch: master
-
-    - provider: releases
-      skip_cleanup: true
-      api_key:
-        secure: Kaep3/MLTplUZTYzELDfg1WeY2XMd74KV4fZCybJD8tL8hgHd/Cw+J0fvPK2ZrW1VADzVLgGRL/8BCycEClpgRgRiX3zgnzaDTlYSlmwh62u32qWekPOlyYxu/G7EcyQV/57BBIIIilQNHBbOLGpHsAzeESRg01dfgUf3C6obCQ1Ic6jWmTM0w5coQtMCfEyqcYYkXhs3BEzPoC8tCnPpk5RidfnAIrBZls1rCZGPlw8+ZDd1fbh4I56VCtkn8jhBhPXQBpf9QXkqdOaFrYiSInEIE3LSB8rxB73dTFCjTUGTAvL9wDC1f3ySbo6CsVllqjY8lq6Mm0aDJPLhuTE8LcWgUyjfc4/HgU65z6PQDC3NUuvxbwNmnolW0lsvLvEWgVoIQCrgRKEW1WvPTwFWdpqm5+KZl8ZjzM9HV3QcvmyJTG4NT1OFo73/W+5GY5oz8urGJHiJzBuOsuW5cUtR9qQ8qPZ5IQUSUcj2tHDzYauVqlNsCjvhmxFC4D6kQG2df1DIHj1r8Yt+PPsR0OE5Vfg0XvaA39XnrX2oEUi8qTb/8440OPfccr79qMp+5ZSOcVO2Gj5wKzNGbmyqPp4oqsQ9KTnYPM6rcRFJ+h/vChBRh3EglbnBnaOwJYs8q2OXr2SZxLeeKn+vTjHrPHzpdX5/2hPFj8QcDUbcoRjrTo=
+  provider: npm
+  skip_cleanup: true
+  email: ${NPM_EMAIL}
+  api_key: ${NPM_AUTH_TOKEN}
+  on:
+    branch: master
