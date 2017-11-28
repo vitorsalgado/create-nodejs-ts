@@ -20,6 +20,8 @@ after_script:
   - snyk monitor
 
 before_deploy:
+  - git config --local user.name vitorsalgado
+  - git config --local user.email vsalgadopb@gmail.com
   - git tag v$(node cli version)
 
 deploy:
