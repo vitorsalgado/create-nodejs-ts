@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ## [Planned/Unreleased]
 - Nothing
 
-## [1.0.0] - YYYY-MM-DD - MAJOR RELEASE
+## [0.0.1] - YYYY-MM-DD - MAJOR RELEASE
 ### Added
 - Added items
 ### Changed
