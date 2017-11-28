@@ -77,3 +77,5 @@ reports/
 /log
 
 jest_*
+*.tar
+*.tar.gz
