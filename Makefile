@@ -14,6 +14,9 @@ BUILD := 10
 dev:
 	npm run start:dev
 
+test:
+	npm run test:all
+
 test-docker:
 	docker rm -f $(PROJECT_TEST) || true && \
 	docker build -t $(PROJECT_TEST) -f Dockerfile.test . && \
@@ -44,4 +47,4 @@ docker-cleanup:
 	docker rmi -f $(DOCKER_IMAGE):$(VERSION) || true && \
 	docker rmi -f $(DOCKER_IMAGE):latest || true
 
-.PHONY: test
+.PHONY: dev

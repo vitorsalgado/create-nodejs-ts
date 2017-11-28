@@ -1,13 +1,13 @@
 {
-  "name": "nodejs-toolkit",
-  "version": "1.0.0",
-  "description": "Node.js Development Toolkit",
+  "name": "generator-nodejs-toolkit",
+  "version": "0.0.1",
+  "description": "Boilerplate to start new Node.js projects with all basic setup. This project is Docker friendly and comes with a simple but complete continuous integration already set.",
   "main": "index.js",
   "scripts": {
     "start": "node index",
     "start:dev": "nodemon --exec 'node -r dotenv/config index.js'",
     "test": "jest",
-    "test:cover": "npm run lint && jest --coverage",
+    "test:all": "npm run lint && jest --coverage",
     "lint": "eslint ./src",
     "security:check": "snyk protect && nsp check --output summary",
     "coveralls": "jest --coverage && cat reports/coverage/lcov.info | ./node_modules/.bin/coveralls"
@@ -15,7 +15,13 @@
   "engines": {
     "node": ">=8.9.0"
   },
-  "private": true,
+  "keywords": [
+    "starter",
+    "boilerplate",
+    "scaffold",
+    "yeoman-generator"
+  ],
+  "private": false,
   "author": "Vitor Hugo Salgado <vsalgadopb@gmail.com>",
   "license": "Apache-2.0",
   "repository": "git+https://github.com/vitorsalgado/nodejs-boilerplate.git",
