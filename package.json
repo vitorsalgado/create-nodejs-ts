@@ -1,6 +1,6 @@
 {
   "name": "generator-nodejs-toolkit",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Boilerplate to start new Node.js projects with all basic setup. This project is Docker friendly and comes with a simple but complete continuous integration already set.",
   "main": "index.js",
   "scripts": {
