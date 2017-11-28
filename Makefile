@@ -3,7 +3,7 @@ PROJECT := nodejs
 PROJECT_TEST := $(PROJECT).test
 DOCKER_IMAGE := $(PROJECT)
 VERSION := $(shell node cli version)
-BUILD := 10
+BUILD := $$TRAVIS_BUILD_NUMBER
 
 
 

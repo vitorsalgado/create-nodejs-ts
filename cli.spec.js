@@ -5,7 +5,7 @@
 const Package = require('./package.json');
 const exec = require('child_process').exec;
 
-describe('cli tool', () => {
+describe('Cli Tool', () => {
 	it('should return package.json version when "version" is called', (done) => {
 		exec('node cli version', (err, data) => {
 			expect(err).toBeNull();

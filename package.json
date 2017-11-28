@@ -1,6 +1,6 @@
 {
   "name": "generator-nodejs-toolkit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Boilerplate to start new Node.js projects with all basic setup. This project is Docker friendly and comes with a simple but complete continuous integration already set.",
   "main": "index.js",
   "scripts": {
@@ -19,10 +19,15 @@
     "starter",
     "boilerplate",
     "scaffold",
+    "template",
     "yeoman-generator"
   ],
   "private": false,
-  "author": "Vitor Hugo Salgado <vsalgadopb@gmail.com>",
+  "author": {
+    "name": "Vitor Hugo Salgado",
+    "email": "vsalgadopb@gmail.com",
+    "url": "https://github.com/vitorsalgado"
+  },
   "license": "Apache-2.0",
   "repository": "git+https://github.com/vitorsalgado/nodejs-boilerplate.git",
   "bugs": {
@@ -69,17 +74,8 @@
     "collectCoverageFrom": [
       "src/**/*.js"
     ],
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "<rootDir>/src/config/",
-      "<rootDir>/src/libs/testUtils.js",
-      "/scripts/"
-    ],
     "testMatch": [
       "**/?(*.)(spec|test).js?(x)"
-    ],
-    "modulePathIgnorePatterns": [
-      "/scripts/"
     ],
     "testPathIgnorePatterns": [
       "__tests__/(fixtures|__mocks__)/",
