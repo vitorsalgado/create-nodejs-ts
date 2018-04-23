@@ -1,0 +1,60 @@
+{
+  "extends": [
+    "standard",
+    "plugin:fp/recommended"
+  ],
+  "env": {
+    "node": true,
+    "jest": true,
+    "es6": true
+  },
+  "rules": {
+    "global-require": "error",
+    "no-console": "error",
+
+    "security/detect-buffer-noassert": "warn",
+    "security/detect-child-process": "warn",
+    "security/detect-disable-mustache-escape": "warn",
+    "security/detect-eval-with-expression": "warn",
+    "security/detect-new-buffer": "warn",
+    "security/detect-no-csrf-before-method-override": "warn",
+    "security/detect-non-literal-fs-filename": "off",
+    "security/detect-non-literal-regexp": "warn",
+    "security/detect-non-literal-require": "warn",
+    "security/detect-object-injection": "off",
+    "security/detect-possible-timing-attacks": "warn",
+    "security/detect-pseudoRandomBytes": "warn",
+    "security/detect-unsafe-regex": "off",
+
+    "fp/no-unused-expression": ["warn", { "allowUseStrict": true }],
+    "fp/no-mutation": ["warn", { "commonjs": true }],
+    "fp/no-arguments": "warn",
+    "fp/no-class": "warn",
+    "fp/no-delete": "warn",
+    "fp/no-events": "warn",
+    "fp/no-get-set": "warn",
+    "fp/no-let": "warn",
+    "fp/no-loops": "warn",
+    "fp/no-mutating-assign": "warn",
+    "fp/no-mutating-methods": "warn",
+    "fp/no-nil": "warn",
+    "fp/no-proxy": "warn",
+    "fp/no-rest-parameters": "warn",
+    "fp/no-this": "warn",
+    "fp/no-throw": "warn",
+    "fp/no-valueof-field": "warn",
+    "no-var": "warn"
+  },
+  "overrides": [
+    {
+      "files": ["*.spec.js"],
+      "rules": {
+        "fp/no-unused-expression": "off",
+        "fp/no-nil": "off"
+      }
+    }
+  ],
+  "plugins": [
+    "security", "fp"
+  ]
+}

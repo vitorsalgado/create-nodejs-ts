@@ -1,0 +1,91 @@
+{
+  "name": "generator-nodejs-toolkit",
+  "version": "0.0.10",
+  "description": "Boilerplate to start new Node.js projects with all basic setup. This project is Docker friendly and comes with a simple but complete continuous integration already set.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "start:docker": "pm2-docker index.config.js --no-daemon",
+    "start:dev": "nodemon --exec 'node -r dotenv/config index.js'",
+    "test": "jest",
+    "test:all": "npm run lint && jest --coverage",
+    "lint": "eslint ./src",
+    "security:check": "snyk protect && nsp check --output summary || true",
+    "coveralls": "cat reports/coverage/lcov.info | ./node_modules/.bin/coveralls"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "keywords": [
+    "starter",
+    "boilerplate",
+    "scaffold",
+    "template",
+    "yeoman-generator"
+  ],
+  "private": false,
+  "author": {
+    "name": "Vitor Hugo Salgado",
+    "email": "vsalgadopb@gmail.com",
+    "url": "https://github.com/vitorsalgado"
+  },
+  "license": "Apache-2.0",
+  "repository": "git+https://github.com/vitorsalgado/nodejs-boilerplate.git",
+  "bugs": {
+    "url": "https://github.com/vitorsalgado/nodejs-boilerplate/issues"
+  },
+  "homepage": "https://github.com/vitorsalgado/nodejs-boilerplate#readme",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "joi": "^13.0.2",
+    "pm2": "^2.10.2"
+  },
+  "devDependencies": {
+    "commander": "^2.15.1",
+    "eslint": "^4.19.1",
+    "eslint-config-nodesecurity": "^1.3.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-fp": "^2.3.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^22.4.3",
+    "nsp": "^3.1.0",
+    "snyk": "^1.50.0",
+    "sonarjs": "^1.0.0"
+  },
+  "optionalDependencies": {
+    "codeclimate-test-reporter": "^0.5.0",
+    "coveralls": "^3.0.0",
+    "nodemon": "^1.12.1",
+    "semver": "^5.4.1"
+  },
+  "jest": {
+    "notify": false,
+    "verbose": true,
+    "clearMocks": true,
+    "resetMocks": true,
+    "testEnvironment": "node",
+    "coverageThreshold": {
+      "global": {
+        "branches": 70,
+        "functions": 70,
+        "lines": 70,
+        "statements": 70
+      }
+    },
+    "coverageDirectory": "reports/coverage",
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "testMatch": [
+      "**/?(*.)(spec|test).js?(x)"
+    ],
+    "testPathIgnorePatterns": [
+      "__tests__/(fixtures|__mocks__)/",
+      "/_(temp|mock|install|init|helpers|utils).js$"
+    ]
+  }
+}

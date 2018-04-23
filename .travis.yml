@@ -1,0 +1,29 @@
+language: node_js
+
+sudo: required
+
+services:
+  - docker
+
+before_script:
+  - snyk auth ${SNYK_TOKEN} -d
+  - snyk protect
+  - npm run security:check
+
+script:
+  - make test
+  - make docker-build
+  - make docker-cleanup
+
+after_script:
+  - codeclimate-test-reporter < reports/coverage/lcov.info
+  - npm run coveralls
+  - snyk monitor
+
+deploy:
+  provider: npm
+  skip_cleanup: true
+  email: ${NPM_EMAIL}
+  api_key: ${NPM_AUTH_TOKEN}
+  on:
+    branch: master

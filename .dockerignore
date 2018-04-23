@@ -1,0 +1,14 @@
+cli/
+deployments/
+docs/
+node_modules/
+reports/
+.codeclimate.yml
+.editorconfig
+.gitignore
+.nvmrc
+Dockerfile.test
+CHANGELOG.md
+docker-compose.yml
+README.md
+*.env
