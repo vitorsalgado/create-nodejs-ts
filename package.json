@@ -1,9 +1,12 @@
 {
   "name": "nodejs-starter-kit",
-  "version": "0.0.10",
+  "version": "1.0.0",
   "description": "NodeJS Starter Project Kit",
   "private": true,
   "scripts": {
+    "prepare": "husky install",
+    "prettier": "prettier 'src/**' --write --ignore-unknown",
+    "prettier:ci": "prettier --check 'src/**' --ignore-unknown"
   },
   "author": {
     "name": "Vitor Hugo Salgado",
@@ -15,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/vitorsalgado/nodejs-boilerplate/issues"
   },
-  "homepage": "https://github.com/vitorsalgado/nodejs-boilerplate#readme"
+  "homepage": "https://github.com/vitorsalgado/nodejs-boilerplate#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.2"
+  }
 }
