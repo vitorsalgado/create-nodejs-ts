@@ -1,12 +1,24 @@
-# Node.js Boilerplate Project
+<h1 align="center">Node.js Starter ToolKit</h1>
 
-[![Build Status](https://travis-ci.org/vitorsalgado/nodejs-boilerplate.svg?branch=master)](https://travis-ci.org/vitorsalgado/nodejs-boilerplate)
-[![Coverage Status](https://coveralls.io/repos/github/vitorsalgado/nodejs-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/vitorsalgado/nodejs-boilerplate?branch=master)
-[![Code Climate](https://codeclimate.com/github/vitorsalgado/nodejs-boilerplate/badges/gpa.svg)](https://codeclimate.com/github/vitorsalgado/nodejs-boilerplate)
-[![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
-[![npm](https://img.shields.io/npm/dt/generator-nodejs-toolkit.svg)](https://www.npmjs.com/package/generator-nodejs-toolkit)
+<p align="center">
+    <img src="docs/assets/logo.png" alt="Logo" />
+    <br/>
+    <i>Foundation project for backend Node.js applications with TypeScript</i>
+</p>
 
-The goal of this project is to have a base from where projects should start with basic configurations already set.
+<p align="center">
+  <a href="https://vitorsalgado.github.io/nodejs-boilerplate/"><strong>vitorsalgado.github.io/nodejs-boilerplate</strong></a>
+  <br>
+</p>
+
+<p align="center">
+  <a href="CONTRIBUTING.md">Contributing Guidelines</a>
+  ·
+  <a href="https://github.com/vitorsalgado/nodejs-boilerplate/issues">Submit an Issue</a>
+  ·
+  <br>
+  <br>
+</p>
 
 ## License
 
