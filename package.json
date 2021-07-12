@@ -4,6 +4,7 @@
   "description": "NodeJS Starter Project Kit",
   "private": true,
   "scripts": {
+    "start:dev": "nodemon --ext js,ts,json,env src/cmd/app/index.ts",
     "prepare": "husky install",
     "lint": "eslint --ext .ts,.js .",
     "prettier": "prettier 'src/**' --write --ignore-unknown",
@@ -37,11 +38,14 @@
     "husky": "^7.0.1",
     "jest": "^27.0.6",
     "lint-staged": "^11.0.0",
+    "nodemon": "^2.0.12",
     "prettier": "^2.3.2",
     "ts-jest": "^27.0.3",
+    "ts-node": "^10.1.0",
     "typescript": "^4.3.5"
   },
   "dependencies": {
+    "dotenv": "^10.0.0",
     "tslib": "^1.14.1"
   }
 }
