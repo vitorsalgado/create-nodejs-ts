@@ -1,5 +1,10 @@
 'use strict'
 
+const COVERAGE_THRESHOLD_DEFAULT = 40
+const COVERAGE_THRESHOLD = process.env.COVERAGE_THRESHOLD
+  ? parseInt(process.env.COVERAGE_THRESHOLD)
+  : COVERAGE_THRESHOLD_DEFAULT
+
 module.exports = {
   verbose: true,
   collectCoverage: false,
@@ -19,10 +24,10 @@ module.exports = {
   },
   coverageThreshold: {
     global: {
-      branches: 60,
-      functions: 60,
-      lines: 60,
-      statements: 60
+      branches: COVERAGE_THRESHOLD,
+      functions: COVERAGE_THRESHOLD,
+      lines: COVERAGE_THRESHOLD,
+      statements: COVERAGE_THRESHOLD
     }
   }
 }
