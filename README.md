@@ -20,6 +20,15 @@
   <br>
 </p>
 
+<p align="center">
+  <a href="https://github.com/vitorsalgado/nodejs-boilerplate/actions/workflows/ci.yml">
+    <img src="https://github.com/vitorsalgado/nodejs-boilerplate/actions/workflows/ci.yml/badge.svg">
+  </a>&nbsp
+  <a href="https://codecov.io/gh/vitorsalgado/nodejs-boilerplate">
+    <img src="https://codecov.io/gh/vitorsalgado/nodejs-boilerplate/branch/master/graph/badge.svg?token=2Z4IBUTP6P"/>
+  </a>&nbsp
+</p>
+
 ## License
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvitorsalgado%2Fnodejs-boilerplate.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvitorsalgado%2Fnodejs-boilerplate?ref=badge_shield)

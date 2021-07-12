@@ -1,36 +1,65 @@
-# This is a basic workflow to help you get started with Actions
+name: ci
 
-name: CI
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
+    branches:
+      - main
+      - '[0-9]+.x'
+    tags:
+      - '*'
+    paths-ignore:
+      - 'docs/**'
+      - '*.md'
   pull_request:
-    branches: [ master ]
+    paths-ignore:
+      - 'docs/**'
+      - '*.md'
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Use Node
+        id: setup-node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Deps
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          npm ci
+
+      - name: Lint
+        run: |
+          npm run lint
+          npm run prettier:ci
+
+      - name: Test
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        run: |
+          npm run test:ci
+          npm run test:coverage:upload
+
+  deploy:
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Deploy To Heroku
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          HEROKU_APP: ${{ secrets.HEROKU_APP }}
+        run: |
+          heroku container:login
+          heroku container:push -a $HEROKU_APP web
+          heroku container:release -a $HEROKU_APP web
