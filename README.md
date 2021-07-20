@@ -7,11 +7,11 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/vitorsalgado/nodejs-boilerplate/actions/workflows/ci.yml">
-    <img src="https://github.com/vitorsalgado/nodejs-boilerplate/actions/workflows/ci.yml/badge.svg">
+  <a href="https://github.com/vitorsalgado/create-nodejs-ts/actions/workflows/ci.yml">
+    <img src="https://github.com/vitorsalgado/create-nodejs-ts/actions/workflows/ci.yml/badge.svg">
   </a>&nbsp
-  <a href="https://codecov.io/gh/vitorsalgado/nodejs-boilerplate">
-    <img src="https://codecov.io/gh/vitorsalgado/nodejs-boilerplate/branch/master/graph/badge.svg?token=2Z4IBUTP6P"/>
+  <a href="https://codecov.io/gh/vitorsalgado/create-nodejs-ts">
+    <img src="https://codecov.io/gh/vitorsalgado/create-nodejs-ts/branch/main/graph/badge.svg?token=YA1LHGXU38"/>
   </a>&nbsp
   <a href="https://github.com/prettier/prettier">
     <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square"/>
@@ -54,6 +54,6 @@ The final folder will the parameter `destination` concatenated with parameter `a
 
 ## License
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvitorsalgado%2Fnodejs-boilerplate.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvitorsalgado%2Fnodejs-boilerplate?ref=badge_shield)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvitorsalgado%2Fcreate-nodejs-ts.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvitorsalgado%2Fcreate-nodejs-ts?ref=badge_shield)
 
 This project is [MIT Licensed](LICENSE).
