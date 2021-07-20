@@ -1,5 +1,10 @@
 #!/usr/bin/env node
 
+/**
+ * This is a sample HTTP server.
+ * Replace this with your implementation.
+ */
+
 import 'dotenv/config'
 import { createServer, IncomingMessage, ServerResponse } from 'http'
 

@@ -21,7 +21,6 @@ const Ignores = [
   '.yarn/install-state.gz',
   'cmd',
   'coverage',
-  'deployments',
   'dist',
   'docs',
   'node_modules',

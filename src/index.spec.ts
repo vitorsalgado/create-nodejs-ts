@@ -1,7 +1,12 @@
+/**
+ * This is a sample test suite.
+ * Replace this with your implementation.
+ */
+
 import { spawn } from 'child_process'
 import Path from 'path'
 
-describe('CMD - App', function () {
+describe('Example Test', function () {
   it('should init without errors', async function () {
     process.env.PORT = '0'
 

@@ -1,21 +1,16 @@
 <h1 align="center">Node.js Starter ToolKit</h1>
 
 <p align="center">
-    <img src="docs/assets/logo.png" alt="Logo" />
-    <br/>
     <i>Starter Project for a Node.js application using <strong>TypeScript</strong> with all boring stuff already configured.</i>
 </p>
 
 <p align="center">
   <a href="https://github.com/vitorsalgado/create-nodejs-ts/actions/workflows/ci.yml">
     <img src="https://github.com/vitorsalgado/create-nodejs-ts/actions/workflows/ci.yml/badge.svg">
-  </a>&nbsp
-  <a href="https://codecov.io/gh/vitorsalgado/create-nodejs-ts">
-    <img src="https://codecov.io/gh/vitorsalgado/create-nodejs-ts/branch/main/graph/badge.svg?token=YA1LHGXU38"/>
-  </a>&nbsp
+  </a>
   <a href="https://github.com/prettier/prettier">
     <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square"/>
-  </a>&nbsp
+  </a>
 </p>
 
 ## Overview
@@ -50,7 +45,7 @@ The final folder will the parameter `destination` concatenated with parameter `a
 - Prettier
 - Standard Version
 - Nodemon
-- Docker
+- Docker | Docker Compose
 
 ## License
 
