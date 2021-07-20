@@ -54,6 +54,4 @@ The final folder will the parameter `destination` concatenated with parameter `a
 
 ## License
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvitorsalgado%2Fcreate-nodejs-ts.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvitorsalgado%2Fcreate-nodejs-ts?ref=badge_shield)
-
 This project is [MIT Licensed](LICENSE).
