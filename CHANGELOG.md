@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/vitorsalgado/nodejs-boilerplate/compare/v1.0.0...v1.1.0) (2021-07-20)
+
+
+### Features
+
+* add docker compose dev env ([ba4db1c](https://github.com/vitorsalgado/nodejs-boilerplate/commit/ba4db1cf4f3b07c653d9b6dff51d61fac49c7fc9))
+
 ## 1.0.0 (2021-07-20)
 
 
