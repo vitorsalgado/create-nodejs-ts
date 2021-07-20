@@ -27,14 +27,7 @@
 
     "outDir": "dist",
     "rootDir": "src",
-    "baseUrl": ".",
-    "paths": {
-      "@app/*": ["./src/*"]
-    },
-    "typeRoots": [
-      "node_modules/@types",
-      "ts-declarations.d.ts"
-    ]
+    "baseUrl": "."
   },
   "exclude": [
     "dist",

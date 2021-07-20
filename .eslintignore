@@ -1,4 +1,5 @@
 dist/
 scripts/
+cmd/
 
 *.d.ts

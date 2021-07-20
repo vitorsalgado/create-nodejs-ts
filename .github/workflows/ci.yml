@@ -15,10 +15,8 @@ on:
       - 'docs/**'
       - '*.md'
 
-  workflow_dispatch:
-
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -36,8 +34,7 @@ jobs:
 
       - name: Lint
         run: |
-          npm run lint
-          npm run prettier:ci
+          npm run lint:ci
 
       - name: Test
         env:
@@ -46,20 +43,52 @@ jobs:
           npm run test:ci
           npm run test:coverage:upload
 
-  deploy:
-    needs:
-      - build
+
+  release:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs:
+      - test
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Deploy To Heroku
+      - name: Use Node
+        id: setup-node
+        uses: actions/setup-node@v2
         env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-          HEROKU_APP: ${{ secrets.HEROKU_APP }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        with:
+          node-version: 14.x
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Deps
         run: |
-          heroku container:login
-          heroku container:push -a $HEROKU_APP web
-          heroku container:release -a $HEROKU_APP web
+          npm ci
+
+      - name: Publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npm publish --access public
+
+      - name: Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body_path: CHANGELOG.md
+          draft: false
+          prerelease: contains(github.ref, '-')
+
+
+  automerge:
+    needs:
+      - test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: fastify/github-action-merge-dependabot@v2.2.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}

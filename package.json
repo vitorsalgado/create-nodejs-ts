@@ -1,17 +1,23 @@
 {
-  "name": "nodejs-starter-kit",
+  "name": "create-nodejs-ts",
   "version": "1.0.0",
   "description": "NodeJS Starter Project Kit",
-  "private": true,
+  "private": false,
+  "main": "dist/index.js",
+  "bin": {
+    "create-nodejs-ts": "cmd/create-nodejs-ts/index.js"
+  },
   "scripts": {
-    "start:dev": "nodemon --ext js,ts,json,env src/cmd/server/index.ts",
+    "start": "nodemon --ext js,ts,json,env src/index.ts",
     "prepare": "husky install",
     "build": "tsc --project tsconfig.build.json",
+    "release": "standard-version",
     "test": "jest --detectOpenHandles --logHeapUsage",
     "test:coverage": "npm run test -- --coverage",
     "test:ci": "npm run test -- --colors --coverage --ci",
     "test:coverage:upload": "codecov -f coverage/*.json",
     "lint": "eslint --ext .ts,.js .",
+    "lint:ci": "npm run lint && npm run prettier:ci",
     "prettier": "prettier 'src/**' --write --ignore-unknown",
     "prettier:ci": "prettier --check 'src/**' --ignore-unknown"
   },
@@ -26,13 +32,26 @@
     "url": "https://github.com/vitorsalgado/nodejs-boilerplate/issues"
   },
   "homepage": "https://github.com/vitorsalgado/nodejs-boilerplate#readme",
+  "keywords": [
+    "nodejs",
+    "nodejs-boilerplate",
+    "typescript",
+    "typescript-boilerplate",
+    "starter",
+    "boilerplate",
+    "scaffold",
+    "template"
+  ],
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "fs-extra": "^9.1.0",
+    "tslib": "^1.14.1"
+  },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "@types/jest": "^26.0.24",
     "@types/node": "^16.3.1",
-    "@types/pino": "^6.3.9",
-    "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
     "codecov": "^3.8.2",
@@ -48,18 +67,9 @@
     "lint-staged": "^11.0.0",
     "nodemon": "^2.0.12",
     "prettier": "^2.3.2",
-    "supertest": "^6.1.3",
+    "standard-version": "^9.3.1",
     "ts-jest": "^27.0.3",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.5"
-  },
-  "dependencies": {
-    "dotenv": "^10.0.0",
-    "fastify": "^3.19.0",
-    "joi": "^17.4.1",
-    "pino": "^6.12.0",
-    "pino-pretty": "^5.1.1",
-    "tsconfig-paths": "^3.10.1",
-    "tslib": "^2.3.0"
   }
 }

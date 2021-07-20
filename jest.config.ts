@@ -1,11 +1,7 @@
-'use strict'
+import 'dotenv/config'
+import type { Config as JestConfig } from '@jest/types'
 
-const COVERAGE_THRESHOLD_DEFAULT = 40
-const COVERAGE_THRESHOLD = process.env.COVERAGE_THRESHOLD
-  ? parseInt(process.env.COVERAGE_THRESHOLD)
-  : COVERAGE_THRESHOLD_DEFAULT
-
-module.exports = {
+const config: JestConfig.InitialOptions = {
   verbose: true,
   collectCoverage: false,
   restoreMocks: true,
@@ -15,19 +11,17 @@ module.exports = {
       tsconfig: './tsconfig.test.json'
     }
   },
-  projects: ['<rootDir>'],
   collectCoverageFrom: ['**/src/*/**/*.ts', '!**/__fixtures__/**', '!**/__tests__/**'],
   coveragePathIgnorePatterns: ['<rootDir>/dist/', '/node_modules/', '<rootDir>/scripts', '<rootDir>/tools'],
   testPathIgnorePatterns: ['<rootDir>/dist/', '/node_modules/', '<rootDir>/scripts', '<rootDir>/tools'],
-  moduleNameMapper: {
-    '^@app/(.*)$': '<rootDir>/src/$1'
-  },
   coverageThreshold: {
     global: {
-      branches: COVERAGE_THRESHOLD,
-      functions: COVERAGE_THRESHOLD,
-      lines: COVERAGE_THRESHOLD,
-      statements: COVERAGE_THRESHOLD
+      branches: 10,
+      functions: 10,
+      lines: 10,
+      statements: 10
     }
   }
 }
+
+export default config
