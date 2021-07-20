@@ -26,7 +26,7 @@
     "email": "vsalgadopb@gmail.com",
     "url": "https://github.com/vitorsalgado"
   },
-  "license": "Apache-2.0",
+  "license": "MIT",
   "repository": "git+https://github.com/vitorsalgado/nodejs-boilerplate.git",
   "bugs": {
     "url": "https://github.com/vitorsalgado/nodejs-boilerplate/issues"
