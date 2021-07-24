@@ -24,3 +24,8 @@ Please check if your PR fulfills the following requirements:
 
 - [ ] Yes
 - [ ] No
+
+## Does this PR add new third-party libraries? If yes, please explain why
+
+- [ ] Yes
+- [ ] No
