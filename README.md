@@ -8,11 +8,11 @@
   <a href="https://github.com/vitorsalgado/create-nodejs-ts/actions/workflows/ci.yml">
     <img src="https://github.com/vitorsalgado/create-nodejs-ts/actions/workflows/ci.yml/badge.svg" alt="GitHub Action Status" />
   </a>
+  <a href="https://www.npmjs.com/package/create-nodejs-ts">
+    <img src="https://img.shields.io/npm/v/create-nodejs-ts.svg?logo=npm&logoColor=fff&label=NPM+package&color=limegreen" alt="npm" />
+  </a>
   <a href="https://nodejs.org/en/">
     <img src="https://img.shields.io/node/v/create-nodejs-ts" alt="Node Min Version" />
-  </a>
-  <a href="https://www.npmjs.com/package/create-nodejs-ts">
-    <img src="https://img.shields.io/npm/v/create-nodejs-ts" alt="npm" />
   </a>
   <a href="https://github.com/prettier/prettier">
     <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat" alt="Prettier"/>
