@@ -31,11 +31,11 @@
     "url": "https://github.com/vitorsalgado"
   },
   "license": "MIT",
-  "repository": "git+https://github.com/vitorsalgado/nodejs-boilerplate.git",
+  "repository": "git+https://github.com/vitorsalgado/create-nodejs-ts.git",
   "bugs": {
-    "url": "https://github.com/vitorsalgado/nodejs-boilerplate/issues"
+    "url": "https://github.com/vitorsalgado/create-nodejs-ts/issues"
   },
-  "homepage": "https://github.com/vitorsalgado/nodejs-boilerplate#readme",
+  "homepage": "https://github.com/vitorsalgado/create-nodejs-ts#readme",
   "keywords": [
     "nodejs",
     "nodejs-boilerplate",
