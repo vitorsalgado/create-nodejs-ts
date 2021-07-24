@@ -27,7 +27,6 @@
 Starter project for **Node.js** applications using **TypeScript** with Test, Lint, Code Style already configured. Take a
 look below for all the tooling available in this repository.  
 The preferable way to use this boilerplate is using `npx` command. You can use `npm init` too.  
-You can use this repository as a `template`, a GitHub feature.  
 Use the following commands to bootstrap a new project:
 
 ### NPX
