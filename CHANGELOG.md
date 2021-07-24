@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/vitorsalgado/create-nodejs-ts/compare/v1.1.0...v1.2.0) (2021-07-24)
+
+
+### Features
+
+* change ts config to es2020 + upgrade docs and add + badges + add types to pkg.json ([e234ebb](https://github.com/vitorsalgado/create-nodejs-ts/commit/e234ebbeab57a8220ee4aa8928a41b6ee4092181))
+
 ## [1.1.0](https://github.com/vitorsalgado/nodejs-boilerplate/compare/v1.0.0...v1.1.0) (2021-07-20)
 
 
