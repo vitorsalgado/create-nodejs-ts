@@ -6,10 +6,19 @@
 
 <p align="center">
   <a href="https://github.com/vitorsalgado/create-nodejs-ts/actions/workflows/ci.yml">
-    <img src="https://github.com/vitorsalgado/create-nodejs-ts/actions/workflows/ci.yml/badge.svg">
+    <img src="https://github.com/vitorsalgado/create-nodejs-ts/actions/workflows/ci.yml/badge.svg" alt="GitHub Action Status" />
+  </a>
+  <a href="https://nodejs.org/en/">
+    <img src="https://img.shields.io/node/v/create-nodejs-ts" alt="Node Min Version" />
+  </a>
+  <a href="https://www.npmjs.com/package/create-nodejs-ts">
+    <img src="https://img.shields.io/npm/v/create-nodejs-ts" alt="npm" />
   </a>
   <a href="https://github.com/prettier/prettier">
-    <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square"/>
+    <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat" alt="Prettier"/>
+  </a>
+  <a href="https://conventionalcommits.org">
+    <img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg" alt="Conventional Commits"/>
   </a>
 </p>
 
@@ -17,11 +26,20 @@
 
 Starter project for **Node.js** applications using **TypeScript** with Test, Lint, Code Style already configured. Take a
 look below for all the tooling available in this repository.  
-This project can be used as a template using GitHub feature with the same name, or using the `npm init` functionality.  
-You can execute the following command:
+The preferable way to use this boilerplate is using `npx` command. You can use `npm init` too.  
+You can use this repository as a `template`, a GitHub feature.  
+Use the following commands to bootstrap a new project:
+
+### NPX
 
 ```
-npm init nodejs-ts
+npx create-nodejs-ts --no --app=your-app
+```
+
+### NPM Init
+
+```
+npm init nodejs-ts -- --app=your-app
 ```
 
 Without parameters, the project will be created on a folder **my-app** in the same directory where you executed the
@@ -34,6 +52,10 @@ All parameters available:
 ```
 
 The final folder will the parameter `destination` concatenated with parameter `app`.
+
+## Requirements
+
+This is project will the latest **Node.js LTS** version for its configurations.
 
 ## Tooling
 
@@ -48,5 +70,7 @@ The final folder will the parameter `destination` concatenated with parameter `a
 - Docker | Docker Compose
 
 ## License
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvitorsalgado%2Fnodejs-boilerplate.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvitorsalgado%2Fnodejs-boilerplate?ref=badge_shield)
 
 This project is [MIT Licensed](LICENSE).
