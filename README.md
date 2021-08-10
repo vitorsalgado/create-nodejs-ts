@@ -52,10 +52,6 @@ All parameters available:
 
 The final folder will the parameter `destination` concatenated with parameter `app`.
 
-## Requirements
-
-This is project will the latest **Node.js LTS** version for its configurations.
-
 ## Tooling
 
 - TypeScript

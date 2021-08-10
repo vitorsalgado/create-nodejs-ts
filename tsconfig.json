@@ -11,6 +11,8 @@
     "sourceMap": true,
     "declaration": true,
 
+    "alwaysStrict": true,
+    "forceConsistentCasingInFileNames": true,
     "removeComments": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
