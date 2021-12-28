@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/vitorsalgado/create-nodejs-ts/compare/v1.2.2...v2.0.0) (2021-12-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* eslint upgrade + remove some ts configs
+
+### Features
+
+* upgrade deps + ci config ([52585be](https://github.com/vitorsalgado/create-nodejs-ts/commit/52585bee7794305658cfc5428a733dbb7e6acfc1))
+
 ### [1.2.2](https://github.com/vitorsalgado/create-nodejs-ts/compare/v1.2.1...v1.2.2) (2021-10-08)
 
 ### [1.2.1](https://github.com/vitorsalgado/create-nodejs-ts/compare/v1.2.0...v1.2.1) (2021-08-10)
