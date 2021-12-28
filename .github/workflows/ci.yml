@@ -1,10 +1,9 @@
-name: ci
+name: CI
 
 on:
   push:
     branches:
       - main
-      - master
       - '[0-9]+.x'
     tags:
       - '*'
@@ -27,7 +26,7 @@ jobs:
         id: setup-node
         uses: actions/setup-node@v2
         with:
-          node-version: 14.x
+          node-version: 16.x
 
       - uses: actions/cache@v2
         with:
@@ -87,6 +86,10 @@ jobs:
         run: |
           npm publish --access public
 
+      - name: Latest Changelog
+        run: |
+          diff --changed-group-format='%>' --unchanged-group-format='' <( git show HEAD~1:CHANGELOG.md ) CHANGELOG.md > CHANGELOG_LATEST.md || true
+
       - name: Release
         uses: actions/create-release@v1
         env:
@@ -94,7 +97,7 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
-          body_path: CHANGELOG.md
+          body_path: CHANGELOG_LATEST.md
           draft: false
           prerelease: contains(github.ref, '-')
 
@@ -103,6 +106,9 @@ jobs:
     needs:
       - test
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write    
     steps:
       - uses: fastify/github-action-merge-dependabot@v3.0.2
         with:
