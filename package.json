@@ -47,7 +47,7 @@
     "template"
   ],
   "dependencies": {
-    "dotenv": "^10.0.0",
+    "dotenv": "^11.0.0",
     "fs-extra": "^10.0.0"
   },
   "devDependencies": {
