@@ -11,9 +11,8 @@ up: ## Run a development environment with Docker Compose.
 down: ## Stop Docker Compose development environment.
 	@docker-compose -f ./deployments/dev/docker-compose.yml down
 
-dev-clean: ## Clean Docker Compose development environment.
+clean: ## Clean Docker Compose development environment.
 	@docker-compose -f ./deployments/dev/docker-compose.yml down --remove-orphans --volumes
-
 
 nvm: ## Install Node.js version described on .nvmrc
 	[ -s "$$HOME/.nvm/nvm.sh" ] && . "$$HOME/.nvm/nvm.sh" && \
