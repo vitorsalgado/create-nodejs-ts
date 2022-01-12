@@ -41,7 +41,7 @@ const Ignores = [
   'yarn.lock'
 ]
 
-const NoDeps = ['fs-extra']
+const NoDeps = ['fs-extra', 'standard-release']
 
 const Templates = [
   { file: 'ci.yml', copyTo: '.github/workflows/ci.yml' },

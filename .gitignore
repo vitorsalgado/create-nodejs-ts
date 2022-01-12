@@ -110,6 +110,9 @@ dist
 !**/.yarn/sdks
 !**/.yarn/versions
 **/.pnp.*
+.yarnrc.yml
+yarn.lock
+.yarn
 
 # Project
 .idea/

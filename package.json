@@ -16,11 +16,9 @@
     "test": "jest --detectOpenHandles --logHeapUsage",
     "test:coverage": "npm run test -- --coverage",
     "test:ci": "npm run test -- --colors --coverage --ci",
-    "test:coverage:upload": "codecov -f coverage/*.json",
     "lint": "eslint --ext .ts,.js .",
-    "lint:ci": "npm run lint && npm run prettier:ci",
-    "prettier": "prettier 'src/**' --write --ignore-unknown",
-    "prettier:ci": "prettier --check 'src/**' --ignore-unknown"
+    "format": "prettier 'src/**' --write --ignore-unknown",
+    "format:check": "prettier --check 'src/**' --ignore-unknown"
   },
   "engines": {
     "node": ">=16"
@@ -51,26 +49,26 @@
     "fs-extra": "^10.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.0.0",
+    "@commitlint/cli": "^16.0.2",
     "@commitlint/config-conventional": "^16.0.0",
-    "@types/jest": "^27.0.0",
-    "@types/node": "^17.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.8.1",
-    "@typescript-eslint/parser": "^5.8.1",
-    "codecov": "^3.8.3",
-    "eslint": "^8.5.0",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^17.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.9.1",
+    "@typescript-eslint/parser": "^5.9.1",
+    "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-tsdoc": "^0.2.14",
-    "husky": "^7.0.1",
-    "jest": "^27.0.6",
-    "lint-staged": "^12.0.2",
-    "nodemon": "^2.0.12",
-    "prettier": "^2.3.2",
-    "standard-version": "^9.3.1",
-    "ts-jest": "^27.0.3",
-    "ts-node": "^10.1.0",
-    "typescript": "^4.3.5"
-  }
+    "husky": "^7.0.4",
+    "jest": "^27.4.7",
+    "lint-staged": "^12.1.7",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1",
+    "standard-version": "^9.3.2",
+    "ts-jest": "^27.1.2",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "packageManager": "yarn@3.1.1"
 }
