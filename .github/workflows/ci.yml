@@ -44,12 +44,19 @@ jobs:
           npm run lint:ci
 
       - name: Test
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         run: |
           npm run test:ci
-          npm run test:coverage:upload
 
+      - name: Coverage
+        uses: codecov/codecov-action@v2
+        timeout-minutes: 5
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          verbose: true
+          files: ./coverage/coverage-final.json
+          fail_ci_if_error: false
 
   release:
     runs-on: ubuntu-latest
@@ -108,7 +115,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
-      contents: write    
+      contents: write
     steps:
       - uses: fastify/github-action-merge-dependabot@v3.0.2
         with:
