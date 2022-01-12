@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/vitorsalgado/create-nodejs-ts/compare/v2.0.0...v2.0.1) (2022-01-12)
+
+
+### Build
+
+* **deps-dev:** bump @commitlint/cli from 16.0.0 to 16.0.1 ([#180](https://github.com/vitorsalgado/create-nodejs-ts/issues/180)) ([cfc323d](https://github.com/vitorsalgado/create-nodejs-ts/commit/cfc323d07180bdd5610457135bc77440438d8053))
+* **deps-dev:** bump @commitlint/cli from 16.0.1 to 16.0.2 ([#192](https://github.com/vitorsalgado/create-nodejs-ts/issues/192)) ([bdec13b](https://github.com/vitorsalgado/create-nodejs-ts/commit/bdec13b45986e4fd8b0b343db2e2981faa6caf72))
+* **deps-dev:** bump @types/jest from 27.0.3 to 27.4.0 ([#181](https://github.com/vitorsalgado/create-nodejs-ts/issues/181)) ([8652780](https://github.com/vitorsalgado/create-nodejs-ts/commit/865278043f005fa2db166ea5dd2a0c20c53be5f1))
+* **deps-dev:** bump @types/node from 17.0.5 to 17.0.7 ([#184](https://github.com/vitorsalgado/create-nodejs-ts/issues/184)) ([254e6ad](https://github.com/vitorsalgado/create-nodejs-ts/commit/254e6adc6d0e612dad0c34adca28dd3bf9f448d5))
+* **deps-dev:** bump @types/node from 17.0.7 to 17.0.8 ([#189](https://github.com/vitorsalgado/create-nodejs-ts/issues/189)) ([214bdda](https://github.com/vitorsalgado/create-nodejs-ts/commit/214bdda48e3aaa164cb9e6e0a1a9d1dae7ccf4b6))
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([#186](https://github.com/vitorsalgado/create-nodejs-ts/issues/186)) ([05a51a7](https://github.com/vitorsalgado/create-nodejs-ts/commit/05a51a70a375c0d13fc621d73ce1df3bf9817d3d))
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([#193](https://github.com/vitorsalgado/create-nodejs-ts/issues/193)) ([063fbd6](https://github.com/vitorsalgado/create-nodejs-ts/commit/063fbd6f0a48858750b00b08900507475ed26673))
+* **deps-dev:** bump @typescript-eslint/parser from 5.8.1 to 5.9.0 ([#187](https://github.com/vitorsalgado/create-nodejs-ts/issues/187)) ([bc96c48](https://github.com/vitorsalgado/create-nodejs-ts/commit/bc96c4896a539cdf19fc28e18a5b233c2b690fbb))
+* **deps-dev:** bump @typescript-eslint/parser from 5.9.0 to 5.9.1 ([#194](https://github.com/vitorsalgado/create-nodejs-ts/issues/194)) ([adcb4bb](https://github.com/vitorsalgado/create-nodejs-ts/commit/adcb4bb8a8875e85647cd2b8d7f6dd1a4023e203))
+* **deps-dev:** bump eslint from 8.5.0 to 8.6.0 ([#182](https://github.com/vitorsalgado/create-nodejs-ts/issues/182)) ([dac8267](https://github.com/vitorsalgado/create-nodejs-ts/commit/dac8267563526d83984668ad7fbdeb1164943da7))
+* **deps-dev:** bump eslint-plugin-import from 2.25.3 to 2.25.4 ([#183](https://github.com/vitorsalgado/create-nodejs-ts/issues/183)) ([e0052c4](https://github.com/vitorsalgado/create-nodejs-ts/commit/e0052c4354a956bb68bdcc8c2e077d32f96d1c69))
+* **deps-dev:** bump jest from 27.4.5 to 27.4.7 ([#188](https://github.com/vitorsalgado/create-nodejs-ts/issues/188)) ([38f9214](https://github.com/vitorsalgado/create-nodejs-ts/commit/38f92142270ab1a4ab72dadd9f2967e712e6dcff))
+* **deps-dev:** bump lint-staged from 12.1.4 to 12.1.5 ([#185](https://github.com/vitorsalgado/create-nodejs-ts/issues/185)) ([2b039d1](https://github.com/vitorsalgado/create-nodejs-ts/commit/2b039d110b0e3868bd1723d746a1e169c52f7496))
+* **deps-dev:** bump lint-staged from 12.1.5 to 12.1.6 ([#190](https://github.com/vitorsalgado/create-nodejs-ts/issues/190)) ([122d2e6](https://github.com/vitorsalgado/create-nodejs-ts/commit/122d2e60dea361b71be8d7e962a581cfdf8b1a85))
+* **deps-dev:** bump lint-staged from 12.1.6 to 12.1.7 ([#191](https://github.com/vitorsalgado/create-nodejs-ts/issues/191)) ([d8fadef](https://github.com/vitorsalgado/create-nodejs-ts/commit/d8fadef570162b4a5073fad44e50ad5e0a6043fb))
+* **deps:** bump dotenv from 10.0.0 to 11.0.0 ([#195](https://github.com/vitorsalgado/create-nodejs-ts/issues/195)) ([169f0a3](https://github.com/vitorsalgado/create-nodejs-ts/commit/169f0a3b1fbca54bb8f94dc1808c0a87aaac7376))
+* simplify Makefile commands ([02be710](https://github.com/vitorsalgado/create-nodejs-ts/commit/02be7102316abe8119650e47bc5c20cf22bdef5b))
+* simplify ts config ([896aacf](https://github.com/vitorsalgado/create-nodejs-ts/commit/896aacf8d7ac575863f913fe1e3f758c4680c8ad))
+* use codecov action ([74407d1](https://github.com/vitorsalgado/create-nodejs-ts/commit/74407d1cb4a1fa365a2032cdbad5d9b1c6c6f898))
+
+
+### Refactor
+
+* add tslib ([bbdac09](https://github.com/vitorsalgado/create-nodejs-ts/commit/bbdac099c33c8911bfc586042abab10587a4589b))
+* upgrade deps + add more entries to changelog + change lint and format commands ([712928b](https://github.com/vitorsalgado/create-nodejs-ts/commit/712928bd50f9209f5028c05260df28be7824c871))
+
 ## [2.0.0](https://github.com/vitorsalgado/create-nodejs-ts/compare/v1.2.2...v2.0.0) (2021-12-28)
 
 
