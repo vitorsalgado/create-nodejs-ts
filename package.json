@@ -45,7 +45,7 @@
     "template"
   ],
   "dependencies": {
-    "dotenv": "^15.0.0",
+    "dotenv": "^16.0.0",
     "fs-extra": "^10.0.0",
     "tslib": "^2.3.1"
   },
