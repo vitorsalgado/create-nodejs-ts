@@ -27,7 +27,7 @@ jobs:
 
       - name: Lint
         run: |
-          npm run lint:ci
+          npm run lint
 
       - name: Test
         run: |
