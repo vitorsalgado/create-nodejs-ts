@@ -1,6 +1,6 @@
 {
   "name": "create-nodejs-ts",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "NodeJS Starter Project Kit",
   "private": false,
   "main": "dist/index.js",
