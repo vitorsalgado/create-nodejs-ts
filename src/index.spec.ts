@@ -11,7 +11,8 @@ describe('Example Test', function () {
     process.env.PORT = '0'
 
     const index = Path.resolve(__dirname, 'index.ts')
-    const proc = await spawn('ts-node', [index])
+    const tsNodeExe = process.platform === 'win32' ? './node_modules/.bin/ts-node.cmd' : './node_modules/.bin/ts-node'
+    const proc = await spawn(tsNodeExe, [index])
 
     expect(proc.pid).toBeDefined()
 

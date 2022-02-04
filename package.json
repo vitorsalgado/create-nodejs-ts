@@ -17,8 +17,8 @@
     "test:coverage": "npm run test -- --coverage",
     "test:ci": "npm run test -- --colors --coverage --ci",
     "lint": "eslint --ext .ts,.js .",
-    "format": "prettier 'src/**' --write --ignore-unknown",
-    "format:check": "prettier --check 'src/**' --ignore-unknown"
+    "format": "prettier \"src/**\" --write --ignore-unknown",
+    "format:check": "prettier --check \"src/**\" --ignore-unknown"
   },
   "engines": {
     "node": ">=16"
