@@ -24,7 +24,7 @@ jobs:
 
       - name: Use Node
         id: setup-node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3.0.0
         with:
           node-version: 16.x
 
@@ -70,7 +70,7 @@ jobs:
 
       - name: Use Node
         id: setup-node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3.0.0
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
