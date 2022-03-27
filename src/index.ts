@@ -7,8 +7,7 @@
 
 import 'dotenv/config'
 import { createServer, IncomingMessage, ServerResponse } from 'http'
-
-const Port = parseInt(process.env.PORT || '8080')
+import { Config } from './config.js'
 
 const requestListener = (request: IncomingMessage, response: ServerResponse) => {
   response.writeHead(200)
@@ -17,4 +16,4 @@ const requestListener = (request: IncomingMessage, response: ServerResponse) => 
 
 const server = createServer(requestListener)
 
-server.listen(Port)
+server.listen(Config.port)
