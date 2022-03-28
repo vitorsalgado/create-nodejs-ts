@@ -1,6 +1,7 @@
 name: CI
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -17,7 +18,13 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    name: Node ${{ matrix.node_version }} - On ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, windows-latest, macos-latest ]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -27,6 +34,7 @@ jobs:
         uses: actions/setup-node@v3.0.0
         with:
           node-version: 16.x
+          cache: 'npm'
 
       - uses: actions/cache@v3
         with:
@@ -74,7 +82,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
-          node-version: 14.x
+          node-version: 16.x
           registry-url: 'https://registry.npmjs.org'
 
       - uses: actions/cache@v3
@@ -94,10 +102,6 @@ jobs:
         run: |
           npm publish --access public
 
-      - name: Latest Changelog
-        run: |
-          diff --changed-group-format='%>' --unchanged-group-format='' <( git show HEAD~1:CHANGELOG.md ) CHANGELOG.md > CHANGELOG_LATEST.md || true
-
       - name: Release
         uses: actions/create-release@v1
         env:
@@ -105,7 +109,7 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
-          body_path: CHANGELOG_LATEST.md
+          body_path: CHANGELOG.md
           draft: false
           prerelease: contains(github.ref, '-')
 
