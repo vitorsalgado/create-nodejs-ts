@@ -32,8 +32,3 @@ check: ## Run all checks for this project
 	@npm run lint
 	@npm run test
 	@npm run build
-
-nvm: ## Install Node.js version described on .nvmrc
-	[ -s "$$HOME/.nvm/nvm.sh" ] && . "$$HOME/.nvm/nvm.sh" && \
-	nvm install $$(cat .nvmrc) && \
-	nvm use
