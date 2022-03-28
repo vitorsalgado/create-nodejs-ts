@@ -2,11 +2,12 @@ version: '3.8'
 
 services:
   dev-app:
-    build:
-      context: ./
-      dockerfile: ../../build/docker/Dockerfile.dev
-    container_name: nodejs-ts.dev-app
+    image: node:16.14.2
+    working_dir: /app
     volumes:
       - ../../:/app
+      - ../../node_modules:/app/node_modules
+      - ../../dist:/app/dist
+    command: bash -c "npm i --quiet --ignore-scripts && npm run start:dev"
     ports:
-      - 8080:8080
+      - "8080:8080"

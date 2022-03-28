@@ -10,6 +10,6 @@ module.exports = {
     { type: 'refactor', section: 'Refactor', hidden: false },
     { type: 'perf', section: 'Perf', hidden: false },
     { type: 'test', section: 'Refactor', hidden: false },
-    { type: 'build', section: 'Build', hidden: false }
-  ]
+    { type: 'build', section: 'Build', hidden: false },
+  ],
 }

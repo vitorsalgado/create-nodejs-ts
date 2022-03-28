@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 
-const Path = require('path')
-const FsExt = require('fs-extra')
+import FsExt from 'fs-extra'
+import Path, { dirname } from 'path'
+import { fileURLToPath } from 'url'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const paramOr = (map, arg, def) => map.get(arg) || def
 const makePath = (...p) => Path.join(...p)
@@ -38,7 +41,7 @@ const Ignores = [
   'Makefile',
   'package.json',
   'package-lock.json',
-  'yarn.lock'
+  'yarn.lock',
 ]
 
 const NoDeps = ['fs-extra', 'standard-release']
@@ -48,7 +51,7 @@ const Templates = [
   { file: 'README.md', copyTo: 'README.md' },
   { file: '.gitignore.husky', copyTo: '.husky/.gitignore' },
   { file: '.gitignore.root', copyTo: '.gitignore' },
-  { file: '.dockerignore.root', copyTo: '.dockerignore' }
+  { file: '.dockerignore.root', copyTo: '.dockerignore' },
 ]
 
 const PkgFieldsToKeep = ['scripts', 'dependencies', 'devDependencies']
@@ -86,7 +89,7 @@ function main() {
 Summary:
 Destination: ${destination}
 App: ${app}
-`
+`,
   )
 
   console.log('Copying Project Files ...')
@@ -102,7 +105,7 @@ App: ${app}
   const pkg = FsExt.readJsonSync(makePath(source, 'package.json'))
   const newPkg = {
     name: app,
-    main: 'dist/index.js'
+    main: 'dist/index.js',
   }
 
   PkgFieldsToKeep.forEach(field => {
@@ -128,4 +131,4 @@ App: ${app}
   return Promise.resolve()
 }
 
-main().catch(console.error)
+await main()

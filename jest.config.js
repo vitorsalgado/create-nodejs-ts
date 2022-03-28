@@ -1,15 +1,17 @@
 import 'dotenv/config'
-import type { Config as JestConfig } from '@jest/types'
 
-const config: JestConfig.InitialOptions = {
+export default {
   verbose: true,
   collectCoverage: false,
   restoreMocks: true,
-  transform: { '^.+\\.tsx?$': 'ts-jest' },
+  transform: {},
+  preset: 'ts-jest/presets/default-esm',
+  extensionsToTreatAsEsm: ['.ts'],
   globals: {
     'ts-jest': {
-      tsconfig: './tsconfig.test.json'
-    }
+      tsconfig: './tsconfig.test.json',
+      useESM: true,
+    },
   },
   collectCoverageFrom: ['**/src/*/**/*.ts', '!**/__fixtures__/**', '!**/__tests__/**'],
   coveragePathIgnorePatterns: ['<rootDir>/dist/', '/node_modules/', '<rootDir>/scripts', '<rootDir>/tools'],
@@ -19,9 +21,7 @@ const config: JestConfig.InitialOptions = {
       branches: 10,
       functions: 10,
       lines: 10,
-      statements: 10
-    }
-  }
+      statements: 10,
+    },
+  },
 }
-
-export default config
