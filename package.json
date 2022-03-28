@@ -19,8 +19,8 @@
     "test:coverage": "npm run test -- --coverage",
     "test:ci": "npm run test -- --colors --coverage --ci",
     "lint": "eslint --ext .ts,.js .",
-    "format": "prettier './**' --write --ignore-unknown",
-    "format:check": "prettier './**' --ignore-unknown --check"
+    "format": "prettier \"./**\" --write --ignore-unknown",
+    "format:check": "prettier \"./**\" --ignore-unknown --check"
   },
   "author": {
     "name": "Vitor Hugo Salgado",

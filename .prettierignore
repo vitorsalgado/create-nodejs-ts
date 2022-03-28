@@ -1,6 +1,7 @@
 .github
 .yarn
 coverage
+build
 docs
 dist
 out
