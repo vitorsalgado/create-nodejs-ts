@@ -4,10 +4,21 @@
  */
 
 import { spawn } from 'child_process'
+import SuperTest from 'supertest'
 import Path, { dirname } from 'path'
 import { fileURLToPath } from 'url'
+import main from './main.js'
 
 describe('Example Test', function () {
+  it('should GET / with 200 OK', function () {
+    return SuperTest(main(0))
+      .get('/')
+      .expect(response => {
+        expect(response.status).toEqual(200)
+        expect(response.text).toEqual('Olá, Hola, Hello!')
+      })
+  })
+
   it('should init without errors', async function () {
     process.env.PORT = '0'
 

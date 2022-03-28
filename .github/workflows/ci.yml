@@ -57,6 +57,7 @@ jobs:
           npm run test:ci
 
       - name: Coverage
+        if: matrix.os == 'ubuntu-latest'
         uses: codecov/codecov-action@v2
         timeout-minutes: 5
         env:

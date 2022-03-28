@@ -1,27 +1,28 @@
 import 'dotenv/config'
 
+const isCI = process.env.CI === 'true'
+
 export default {
   verbose: true,
   collectCoverage: false,
+  resetModules: true,
   restoreMocks: true,
+  testEnvironment: 'node',
   transform: {},
   preset: 'ts-jest/presets/default-esm',
   extensionsToTreatAsEsm: ['.ts'],
+  testMatch: ['**/?(*.)+(spec|test).[jt]s?(x)'],
+  moduleNameMapper: {
+    '^(\\.{1,2}/.*)\\.js$': '$1',
+  },
   globals: {
     'ts-jest': {
       tsconfig: './tsconfig.test.json',
       useESM: true,
     },
   },
-  collectCoverageFrom: ['**/src/*/**/*.ts', '!**/__fixtures__/**', '!**/__tests__/**'],
+  collectCoverageFrom: ['<rootDir>/src/*.ts'],
   coveragePathIgnorePatterns: ['<rootDir>/dist/', '/node_modules/', '<rootDir>/scripts', '<rootDir>/tools'],
-  testPathIgnorePatterns: ['<rootDir>/dist/', '/node_modules/', '<rootDir>/scripts', '<rootDir>/tools'],
-  coverageThreshold: {
-    global: {
-      branches: 10,
-      functions: 10,
-      lines: 10,
-      statements: 10,
-    },
-  },
+  coverageProvider: 'v8',
+  coverageReporters: isCI ? ['json'] : ['text'],
 }
