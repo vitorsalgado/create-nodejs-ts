@@ -7,13 +7,14 @@ import { fileURLToPath } from 'url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const paramOr = (map, arg, def) => map.get(arg) || def
+const valueOr = (value, def) => value || def
 const makePath = (...p) => Path.join(...p)
 const ignoreContent =
   (...values) =>
   source =>
     !values.some(x => source === x)
 
-const Ignores = [
+const FilesToIgnore = [
   '.git',
   '.idea',
   '.vscode',
@@ -38,13 +39,13 @@ const Ignores = [
   'CODE_OF_CONDUCT.md',
   'LICENSE',
   'README.md',
-  'Makefile',
   'package.json',
   'package-lock.json',
   'yarn.lock',
+  'tsconfig.build.tsbuildinfo',
 ]
 
-const NoDeps = ['fs-extra', 'standard-release']
+const DepsToIgnore = ['fs-extra', '@types/fs-extra', 'standard-release']
 
 const Templates = [
   { file: 'ci.yml', copyTo: '.github/workflows/ci.yml' },
@@ -54,13 +55,13 @@ const Templates = [
   { file: '.dockerignore.root', copyTo: '.dockerignore' },
 ]
 
-const PkgFieldsToKeep = ['scripts', 'dependencies', 'devDependencies']
+const PkgFieldsToKeep = ['type', 'main', 'types', 'scripts', 'dependencies', 'devDependencies']
 
 function main() {
   console.log('NodeJS Starter Kit - Bootstrapping New Project')
 
   const argv = process.argv.slice(2)
-  const argMap = new Map()
+  const args = new Map()
 
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i]
@@ -70,18 +71,18 @@ function main() {
       const key = match[1]
       const value = match[2]
 
-      argMap.set(key, value)
+      args.set(key, value)
     } else if (/^--.+/.test(arg)) {
       const key = arg.match(/^--(.+)/)[1]
       const next = argv[i + 1]
 
-      argMap.set(key, next)
+      args.set(key, next)
     }
   }
 
   const source = makePath(__dirname, '../..')
-  const dest = paramOr(argMap, 'destination', process.cwd()).trim()
-  const app = paramOr(argMap, 'app', 'my-app').trim()
+  const dest = valueOr(argv[0], process.cwd()).trim()
+  const app = paramOr(args, 'name', 'my-app').trim()
   const destination = makePath(dest, app)
 
   console.log(
@@ -94,7 +95,7 @@ App: ${app}
 
   console.log('Copying Project Files ...')
 
-  FsExt.copySync(source, destination, { filter: ignoreContent(...Ignores.map(x => makePath(source, x))) })
+  FsExt.copySync(source, destination, { filter: ignoreContent(...FilesToIgnore.map(x => makePath(source, x))) })
 
   console.log('Copying Templates ...')
 
@@ -105,7 +106,6 @@ App: ${app}
   const pkg = FsExt.readJsonSync(makePath(source, 'package.json'))
   const newPkg = {
     name: app,
-    main: 'dist/main.js',
   }
 
   PkgFieldsToKeep.forEach(field => {
@@ -114,7 +114,7 @@ App: ${app}
     }
   })
 
-  NoDeps.forEach(dep => {
+  DepsToIgnore.forEach(dep => {
     if (pkg.dependencies[dep]) {
       delete pkg.dependencies[dep]
     }
