@@ -119,14 +119,16 @@ App: ${app}
   }
 
   for (const dep of DepsToIgnore) {
-    if (pkg.dependencies[dep]) {
-      delete pkg.dependencies[dep]
+    if (newPkg.dependencies[dep]) {
+      delete newPkg.dependencies[dep]
     }
 
-    if (pkg.devDependencies[dep]) {
-      delete pkg.dependencies[dep]
+    if (newPkg.devDependencies[dep]) {
+      delete newPkg.devDependencies[dep]
     }
   }
+
+  delete newPkg.scripts.release
 
   FsExt.writeJsonSync(makePath(destination, 'package.json'), newPkg, { spaces: 2 })
 
