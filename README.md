@@ -24,8 +24,8 @@
 
 ## Overview
 
-Starter project for **Node.js** applications using **TypeScript** with Test, Lint, Code Style already configured. Take a
-look below for all the tooling available in this repository.  
+Starter project for **Node.js** applications using **TypeScript** with test, lint, code formatter already configured.
+Check the [tooling](#tooling) section for more details.  
 The preferable way to use this boilerplate is using `npx` command. You can use `npm init` too.  
 Use the following commands to bootstrap a new project:
 
@@ -50,17 +50,32 @@ All parameters available:
 --app=<APP_NAME> Defaults to my-app
 ```
 
+## ESM
+
+The project template now uses **ESM** by default.
+
 The final folder will the parameter `destination` concatenated with parameter `app`.
+
+## Docker
+
+Minimalist docker image generation.  
+Check this [Dockerfile](build/docker/Dockerfile).
+
+## Local Dev Environment
+
+Run `make up` spin up a local environment with **Docker Compose**.  
+Check this [docker-compose.yml](deployments/dev/docker-compose.yml) for more details.
 
 ## Tooling
 
+- ESM
 - TypeScript
+- Jest
 - EsLint
 - Husky
 - Commit Lint
 - Lint Staged
 - Prettier
-- Standard Version
 - Nodemon
 - Docker | Docker Compose
 
