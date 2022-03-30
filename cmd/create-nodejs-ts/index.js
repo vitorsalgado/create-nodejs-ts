@@ -7,7 +7,6 @@ import { fileURLToPath } from 'url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const paramOr = (map, arg, def) => map.get(arg) || def
-const valueOr = (value, def) => value || def
 const makePath = (...p) => Path.join(...p)
 const ignoreContent =
   (...values) =>
@@ -20,9 +19,12 @@ const FilesToIgnore = [
   '.vscode',
   '.github',
   '.husky/_',
+  '.yarn',
   '.yarn/cache',
   '.yarn/build-state.yml',
   '.yarn/install-state.gz',
+  '.yarnrc.yml',
+  '.versionrc.js',
   'cmd',
   'coverage',
   'dist',
@@ -81,7 +83,7 @@ function main() {
   }
 
   const source = makePath(__dirname, '../..')
-  const dest = valueOr(argv[0], process.cwd()).trim()
+  const dest = paramOr(args, 'destination', process.cwd()).trim()
   const app = paramOr(args, 'name', 'my-app').trim()
   const destination = makePath(dest, app)
 
@@ -99,7 +101,9 @@ App: ${app}
 
   console.log('Copying Templates ...')
 
-  Templates.forEach(x => FsExt.copySync(makePath(source, 'templates', x.file), makePath(destination, x.copyTo)))
+  for (const x of Templates) {
+    FsExt.copySync(makePath(source, 'templates', x.file), makePath(destination, x.copyTo))
+  }
 
   console.log('Preparing package.json ...')
 
@@ -108,13 +112,13 @@ App: ${app}
     name: app,
   }
 
-  PkgFieldsToKeep.forEach(field => {
+  for (const field of PkgFieldsToKeep) {
     if (typeof pkg[field] !== 'undefined') {
       newPkg[field] = pkg[field]
     }
-  })
+  }
 
-  DepsToIgnore.forEach(dep => {
+  for (const dep of DepsToIgnore) {
     if (pkg.dependencies[dep]) {
       delete pkg.dependencies[dep]
     }
@@ -122,7 +126,7 @@ App: ${app}
     if (pkg.devDependencies[dep]) {
       delete pkg.dependencies[dep]
     }
-  })
+  }
 
   FsExt.writeJsonSync(makePath(destination, 'package.json'), newPkg, { spaces: 2 })
 
