@@ -2,6 +2,52 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.1](https://github.com/vitorsalgado/create-nodejs-ts/compare/v3.0.0...v3.0.1) (2022-05-05)
+
+
+### Docs
+
+* remove nodejs min version badge ([a6528d6](https://github.com/vitorsalgado/create-nodejs-ts/commit/a6528d67f855912cc62bd85121b4554ceb868743))
+
+
+### Build
+
+* **deps-dev:** bump @commitlint/cli from 16.2.3 to 16.2.4 ([#309](https://github.com/vitorsalgado/create-nodejs-ts/issues/309)) ([012e1dd](https://github.com/vitorsalgado/create-nodejs-ts/commit/012e1dd2da10d52bce6893463f8d4b5feb5a020e))
+* **deps-dev:** bump @commitlint/config-conventional ([#314](https://github.com/vitorsalgado/create-nodejs-ts/issues/314)) ([0c30c73](https://github.com/vitorsalgado/create-nodejs-ts/commit/0c30c73f453ba47c89696b70278655e7d4a3170b))
+* **deps-dev:** bump @jest/globals from 27.5.1 to 28.0.0 ([#303](https://github.com/vitorsalgado/create-nodejs-ts/issues/303)) ([5abdb77](https://github.com/vitorsalgado/create-nodejs-ts/commit/5abdb77ad38a7313bb06e4e776e52426983a8553))
+* **deps-dev:** bump @jest/globals from 28.0.0 to 28.0.3 ([#311](https://github.com/vitorsalgado/create-nodejs-ts/issues/311)) ([bd87b58](https://github.com/vitorsalgado/create-nodejs-ts/commit/bd87b581d2512f373acfe3b1d79b075ec1c53ab7))
+* **deps-dev:** bump @jest/types from 27.5.1 to 28.0.0 ([#297](https://github.com/vitorsalgado/create-nodejs-ts/issues/297)) ([4085359](https://github.com/vitorsalgado/create-nodejs-ts/commit/40853592d497531c47d445598a4009e81211f191))
+* **deps-dev:** bump @types/node from 17.0.23 to 17.0.24 ([#293](https://github.com/vitorsalgado/create-nodejs-ts/issues/293)) ([88fa743](https://github.com/vitorsalgado/create-nodejs-ts/commit/88fa743afc9d0e7c1c995af2ddcba1f61fb18a57))
+* **deps-dev:** bump @types/node from 17.0.24 to 17.0.26 ([#302](https://github.com/vitorsalgado/create-nodejs-ts/issues/302)) ([24d1f96](https://github.com/vitorsalgado/create-nodejs-ts/commit/24d1f968a305e232c434d3d8c7982d59c877290e))
+* **deps-dev:** bump @types/node from 17.0.26 to 17.0.31 ([#305](https://github.com/vitorsalgado/create-nodejs-ts/issues/305)) ([5790d11](https://github.com/vitorsalgado/create-nodejs-ts/commit/5790d11b43e1ac56f066b4a4ef88597fff362cb3))
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([#288](https://github.com/vitorsalgado/create-nodejs-ts/issues/288)) ([2ffcb7b](https://github.com/vitorsalgado/create-nodejs-ts/commit/2ffcb7bd533b9b16b8cd1d923d2c05b1ace84574))
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([#294](https://github.com/vitorsalgado/create-nodejs-ts/issues/294)) ([4e2b77a](https://github.com/vitorsalgado/create-nodejs-ts/commit/4e2b77a46bdc3bbd7eeb9eba3f4b091bb9575ae7))
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([#299](https://github.com/vitorsalgado/create-nodejs-ts/issues/299)) ([dd8c333](https://github.com/vitorsalgado/create-nodejs-ts/commit/dd8c333dfa73d10729fd1992e0102f86c3a38c01))
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([#307](https://github.com/vitorsalgado/create-nodejs-ts/issues/307)) ([7d5e4fd](https://github.com/vitorsalgado/create-nodejs-ts/commit/7d5e4fd4dae3f846dfc775e627b01446e8e2b0b7))
+* **deps-dev:** bump @typescript-eslint/parser from 5.17.0 to 5.18.0 ([#287](https://github.com/vitorsalgado/create-nodejs-ts/issues/287)) ([1dcc828](https://github.com/vitorsalgado/create-nodejs-ts/commit/1dcc828d1d8b6cfe68db0189c9f4cc972d8eac9d))
+* **deps-dev:** bump @typescript-eslint/parser from 5.18.0 to 5.19.0 ([#290](https://github.com/vitorsalgado/create-nodejs-ts/issues/290)) ([73e8350](https://github.com/vitorsalgado/create-nodejs-ts/commit/73e8350143bf659570070bbe721abf6e517ff9f1))
+* **deps-dev:** bump @typescript-eslint/parser from 5.19.0 to 5.20.0 ([#300](https://github.com/vitorsalgado/create-nodejs-ts/issues/300)) ([fe6002f](https://github.com/vitorsalgado/create-nodejs-ts/commit/fe6002fb2edd66a7ba352c70dc17ad296b836161))
+* **deps-dev:** bump @typescript-eslint/parser from 5.20.0 to 5.21.0 ([#310](https://github.com/vitorsalgado/create-nodejs-ts/issues/310)) ([5e40adb](https://github.com/vitorsalgado/create-nodejs-ts/commit/5e40adb25e6ff03bb3851d45d9e83f6c4880a6ac))
+* **deps-dev:** bump eslint from 8.12.0 to 8.13.0 ([#286](https://github.com/vitorsalgado/create-nodejs-ts/issues/286)) ([80bbd06](https://github.com/vitorsalgado/create-nodejs-ts/commit/80bbd0698d794820f7d55a0289a145e1c9f28c83))
+* **deps-dev:** bump eslint from 8.13.0 to 8.14.0 ([#298](https://github.com/vitorsalgado/create-nodejs-ts/issues/298)) ([e77b1b7](https://github.com/vitorsalgado/create-nodejs-ts/commit/e77b1b76b97114dd4dcb52b66d75264dd96a2e16))
+* **deps-dev:** bump eslint-plugin-import from 2.25.4 to 2.26.0 ([#285](https://github.com/vitorsalgado/create-nodejs-ts/issues/285)) ([ede4c08](https://github.com/vitorsalgado/create-nodejs-ts/commit/ede4c08c8f137bed6efd7ae08a8bc3aa4918b930))
+* **deps-dev:** bump eslint-plugin-tsdoc from 0.2.14 to 0.2.16 ([#284](https://github.com/vitorsalgado/create-nodejs-ts/issues/284)) ([40ed5a7](https://github.com/vitorsalgado/create-nodejs-ts/commit/40ed5a718367b3f5ce8ffcda924e479a62d422d8))
+* **deps-dev:** bump lint-staged from 12.3.7 to 12.3.8 ([#291](https://github.com/vitorsalgado/create-nodejs-ts/issues/291)) ([57e8829](https://github.com/vitorsalgado/create-nodejs-ts/commit/57e8829c66a13c00416b099f9e63bf1a381426fc))
+* **deps-dev:** bump lint-staged from 12.3.8 to 12.4.0 ([#301](https://github.com/vitorsalgado/create-nodejs-ts/issues/301)) ([0695b6e](https://github.com/vitorsalgado/create-nodejs-ts/commit/0695b6e6e53ad554861e6f8d32561c594ac526b9))
+* **deps-dev:** bump lint-staged from 12.4.0 to 12.4.1 ([#306](https://github.com/vitorsalgado/create-nodejs-ts/issues/306)) ([1912c48](https://github.com/vitorsalgado/create-nodejs-ts/commit/1912c48cc1b1ad903263d8e7a72d9c0e4b399528))
+* **deps-dev:** bump nodemon from 2.0.15 to 2.0.16 ([#315](https://github.com/vitorsalgado/create-nodejs-ts/issues/315)) ([f887d8e](https://github.com/vitorsalgado/create-nodejs-ts/commit/f887d8ea96e4aaaf7cf8cec64601a7a685f9b30a))
+* **deps-dev:** bump prettier from 2.6.1 to 2.6.2 ([#280](https://github.com/vitorsalgado/create-nodejs-ts/issues/280)) ([1985aef](https://github.com/vitorsalgado/create-nodejs-ts/commit/1985aef6fee180f4cb79527b2324d6f8812686ad))
+* **deps-dev:** bump supertest from 6.2.2 to 6.2.3 ([#313](https://github.com/vitorsalgado/create-nodejs-ts/issues/313)) ([ac420f7](https://github.com/vitorsalgado/create-nodejs-ts/commit/ac420f775529f1196c83e0b5dc2d096ae6f89c03))
+* **deps-dev:** bump typescript from 4.6.3 to 4.6.4 ([#308](https://github.com/vitorsalgado/create-nodejs-ts/issues/308)) ([bc6e572](https://github.com/vitorsalgado/create-nodejs-ts/commit/bc6e572b45a46a5a5bde3394e037af43f539ff44))
+* **deps:** bump actions/setup-node from 3.0.0 to 3.1.0 ([#279](https://github.com/vitorsalgado/create-nodejs-ts/issues/279)) ([040658f](https://github.com/vitorsalgado/create-nodejs-ts/commit/040658f846055e7a70cf3a16ced44a82265759ff))
+* **deps:** bump actions/setup-node from 3.1.0 to 3.1.1 ([#283](https://github.com/vitorsalgado/create-nodejs-ts/issues/283)) ([ccf9ac8](https://github.com/vitorsalgado/create-nodejs-ts/commit/ccf9ac88bc8260479844563ec295a5ed086b6cfd))
+* **deps:** bump codecov/codecov-action from 2 to 3 ([#282](https://github.com/vitorsalgado/create-nodejs-ts/issues/282)) ([8372e84](https://github.com/vitorsalgado/create-nodejs-ts/commit/8372e842be5e804b6b4a484e94e238670b23cf69))
+* **deps:** bump fastify/github-action-merge-dependabot ([#289](https://github.com/vitorsalgado/create-nodejs-ts/issues/289)) ([cea4d34](https://github.com/vitorsalgado/create-nodejs-ts/commit/cea4d347636ee16359f14d63251f6ea3f44a8dd9))
+* **deps:** bump fastify/github-action-merge-dependabot ([#295](https://github.com/vitorsalgado/create-nodejs-ts/issues/295)) ([85edb14](https://github.com/vitorsalgado/create-nodejs-ts/commit/85edb148df648195bb2aa81585cb4ca89997726a))
+* **deps:** bump fs-extra from 10.0.1 to 10.1.0 ([#292](https://github.com/vitorsalgado/create-nodejs-ts/issues/292)) ([4a8e4f7](https://github.com/vitorsalgado/create-nodejs-ts/commit/4a8e4f7fc1de46a385f52369699bf161cdad0111))
+* **deps:** bump github/codeql-action from 1 to 2 ([#296](https://github.com/vitorsalgado/create-nodejs-ts/issues/296)) ([590be01](https://github.com/vitorsalgado/create-nodejs-ts/commit/590be01b11bed2da63312036169e7d164c3cb41a))
+* **deps:** bump tslib from 2.3.1 to 2.4.0 ([#304](https://github.com/vitorsalgado/create-nodejs-ts/issues/304)) ([658b268](https://github.com/vitorsalgado/create-nodejs-ts/commit/658b2686f1b20f0b3801f043c4349e0c6e2366e7))
+
 ## [3.0.0](https://github.com/vitorsalgado/create-nodejs-ts/compare/v2.1.0...v3.0.0) (2022-03-30)
 
 
