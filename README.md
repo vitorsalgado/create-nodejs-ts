@@ -47,11 +47,11 @@ All parameters available:
 --app=<APP_NAME> Defaults to my-app
 ```
 
+The final folder will the parameter `destination`, if provided, concatenated with the parameter `app`.
+
 ## ESM
 
 The project template now uses **ESM** by default.
-
-The final folder will the parameter `destination` concatenated with parameter `app`.
 
 ## Docker
 
@@ -60,7 +60,7 @@ Check this [Dockerfile](build/docker/Dockerfile).
 
 ## Local Dev Environment
 
-Run `make up` spin up a local environment with **Docker Compose**.  
+Run `make up` to spin up a local environment with **Docker Compose**.  
 Check this [docker-compose.yml](deployments/dev/docker-compose.yml) for more details.
 
 ## Tooling
