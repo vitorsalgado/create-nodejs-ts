@@ -66,7 +66,7 @@
     "eslint-plugin-tsdoc": "^0.2.14",
     "husky": "^8.0.1",
     "jest": "^27.5.1",
-    "lint-staged": "^14.0.1",
+    "lint-staged": "^15.0.2",
     "nodemon": "^3.0.1",
     "prettier": "^3.0.0",
     "supertest": "^6.2.2",
